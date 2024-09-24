@@ -74,6 +74,7 @@
     jq  # format json
     usbutils
     xsensors
+    static-web-server # http server
   ];
   
   #################################
@@ -105,6 +106,7 @@
   environment.shellAliases = {
     rebuild = "sudo nixos-rebuild switch --flake /etc/dotfiles/nix#$NIX_FLAKE_DEFAULT_HOST";
     update = "nix flake update /etc/dotfiles/nix";
+    serve = "static-web-server --port 3000 --root ./";
   };
 
   #################################
