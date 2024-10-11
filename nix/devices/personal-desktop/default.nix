@@ -8,10 +8,19 @@
   ];
     
   # Bootloader
-  boot.loader.grub.enable = true;
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.device = "/dev/vda"; # Define GRUB device
-  boot.loader.timeout = 25; # timeout for switching GRUB config manually (useful for dual boot)
+  # TODO switch to GRUB
+  # - current issue: installation of GRUB creates EFI entry in `efibootmgr` but it will be deleted during boot
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    systemd-boot.enable = true;
+    timeout = 5;
+  };
+
+  # Time
+  time.hardwareClockInLocalTime = true; # using local time (required for dual boot with Windows because it stores the local time)
 
   # Swapfile
   swapDevices = [{
