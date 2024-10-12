@@ -60,11 +60,6 @@
     nodejs_20  # switch to v22 in October 2024 (because it is currently not LTS)
     yarn
 
-    # Python stuff (template to copy into nix devshell)
-    # (python3.withPackages (python-pkgs: with python-pkgs; [
-    #   numpy
-    # ]))
-
     # other
     openvpn
     yubioath-flutter

@@ -50,18 +50,7 @@
       ];
     })
 
-    # Javascript stuff
-    nodejs_20  # switch to v22 in October 2024 (because it is currently not LTS)
-    yarn
-    deno
-
-    # Python stuff
-    (python3.withPackages (python-pkgs: with python-pkgs; [
-      virtualenv
-    ]))
-
     # other coding stuff
-    go
     rpi-imager
     yubioath-flutter
 
