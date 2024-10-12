@@ -12,6 +12,7 @@
     # discord
     # signal-desktop
     # spotify
+    ausweisapp
 
     # Jetbrains
     jetbrains.idea-ultimate
