@@ -62,6 +62,7 @@
     # other coding stuff
     go
     rpi-imager
+    yubioath-flutter
 
     # 3d printing
     openscad
@@ -71,7 +72,7 @@
   #################################
   ###### PROGRAMS / SERVICES ######
   #################################
-  # no additional config (see nix/base/gui.nix)
+  services.pcscd.enable = true; # required for Yubico Authenticator
 
   #################################
   ######### SHELL ALIASES #########
