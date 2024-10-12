@@ -9,9 +9,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # general
-    # discord
-    # signal-desktop
-    # spotify
+    discord
+    spotify
     ausweisapp
 
     # Jetbrains

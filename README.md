@@ -114,7 +114,14 @@ Steps:
     1. IntelliJ IDEA: sign-in and sync settings
     2. maybe generate ssh key: https://docs.github.com/de/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
     3. maybe store secret `ssh-config.txt` file as `~/.ssh/config`
-    4. for work-laptop:
+    4. enable NoiseTorch: open NoiseTorch GUI and load the config
+    5. for personal-config:
+        1. Discord:
+            1. Login
+            2. On personal-desktop: Add Keybinding "Toggle Mute" on L1 macro key 
+            3. On personal-desktop: Add Keybinding "Toggle Deafen" on L2 macro key 
+        2. Spotify: Login
+    6. for work-laptop:
         1. copy `~/.aws/config` and `~/.aws/credentials` from old system to home directory
         2. copy keepass file from old system to desktop
         3. copy OpenVPN profiles from old system to desktop or a subfolder & import the .ovpn file using the Networkmanager-GUI (see system Settings GUI > Network)
