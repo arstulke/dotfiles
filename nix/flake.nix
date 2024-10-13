@@ -6,9 +6,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions }: {
+  outputs = { self, nixpkgs, home-manager, nix-vscode-extensions, nix-ld }: {
     nixosConfigurations = builtins.mapAttrs (device: value: nixpkgs.lib.nixosSystem {
       system = value.system;
       specialArgs = {
@@ -18,6 +22,7 @@
       modules = [
         ./base/minimum.nix
         ./devices/${device}/default.nix
+        nix-ld.nixosModules.nix-ld
         home-manager.nixosModules.home-manager
       ];
     }) {

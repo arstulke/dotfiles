@@ -54,6 +54,14 @@
   };
 
   #################################
+  ########### LIBRARIES ###########
+  #################################
+  programs.nix-ld.dev.enable = true;
+  programs.nix-ld.dev.libraries = with pkgs; [
+    # Add here any missing dynamic libraries for unpackaged programs
+  ];
+
+  #################################
   ############ PACKAGES ###########
   #################################
 
