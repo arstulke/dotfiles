@@ -71,6 +71,7 @@
     # general
     git
     bash
+    zip
     vim
     nano
     wget
@@ -115,6 +116,7 @@
     rebuild = "sudo nixos-rebuild switch --flake /etc/dotfiles/nix#$NIX_FLAKE_DEFAULT_HOST";
     update = "nix flake update /etc/dotfiles/nix";
     serve = "static-web-server --port 3000 --root ./";
+    encrypt-as-zip = "function _ezip() { zip --encrypt \"\${1}.zip\" \"\$1\"; }; _ezip";
   };
 
   #################################
