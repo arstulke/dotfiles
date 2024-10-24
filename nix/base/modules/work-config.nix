@@ -91,6 +91,13 @@
       file:///home/arne/Desktop/projects projects
     '';
 
-    programs.git.userEmail = lib.mkForce "41028207+arstulke-btc@users.noreply.github.com";
+    programs.git = {
+      extraConfig = {
+        commit.gpgsign = true;
+        gpg.format = "ssh";
+        user.signingkey = "/home/arne/.ssh/id_ed25519.pub";
+      };
+      userEmail = lib.mkForce "41028207+arstulke-btc@users.noreply.github.com";
+    };
   };
 }
