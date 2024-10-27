@@ -1,6 +1,10 @@
 { config, pkgs, nix-vscode-extensions, ... }:
 
 {
+  imports = [
+    ../modules/airplay-server.nix
+  ];
+
   #################################
   ############ PACKAGES ###########
   #################################
