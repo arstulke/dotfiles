@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../base/gui.nix
-    ../../base/modules/work-config.nix
+    ../../base/profiles/work-config.nix
   ];
 
   # Add graphics driver

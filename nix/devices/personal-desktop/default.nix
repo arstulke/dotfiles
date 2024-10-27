@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../base/gui.nix
-    ../../base/modules/personal-config.nix
+    ../../base/profiles/personal-config.nix
   ];
     
   # Bootloader
