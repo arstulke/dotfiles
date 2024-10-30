@@ -138,6 +138,7 @@
           "org.gnome.Nautilus.desktop"
           "code.desktop"
           "idea-ultimate.desktop"
+          "webstorm.desktop"
           "sublime_merge.desktop"
           "org.gnome.Console.desktop"
           "google-chrome.desktop"

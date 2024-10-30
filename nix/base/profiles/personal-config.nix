@@ -19,6 +19,7 @@
 
     # Jetbrains
     jetbrains.idea-ultimate
+    pkgs-unstable.jetbrains.webstorm
 
     # VS Code
     (vscode-with-extensions.override {
