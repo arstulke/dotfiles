@@ -68,6 +68,15 @@
   #################################
   services.pcscd.enable = true; # required for Yubico Authenticator
 
+  networking.firewall = {
+    allowedTCPPorts = [];
+    allowedUDPPorts = [
+      # Matter IoT protocol
+      5353 # mDNS
+      5540 # Matter
+    ];
+  };
+
   #################################
   ######### SHELL ALIASES #########
   #################################
