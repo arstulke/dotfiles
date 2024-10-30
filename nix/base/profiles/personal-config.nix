@@ -1,4 +1,4 @@
-{ config, pkgs, nix-vscode-extensions, ... }:
+{ config, pkgs, pkgs-unstable, nix-vscode-extensions, ... }:
 
 {
   imports = [
