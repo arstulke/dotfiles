@@ -56,11 +56,14 @@
 
     # other coding stuff
     rpi-imager
-    yubioath-flutter
 
     # 3d printing
     openscad
     prusa-slicer
+
+    # other
+    yubioath-flutter
+    thefuck
   ];
 
   #################################

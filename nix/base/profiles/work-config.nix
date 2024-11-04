@@ -64,6 +64,7 @@
     openvpn
     yubioath-flutter
     keepassxc
+    thefuck
   ];
 
   #################################
