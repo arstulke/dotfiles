@@ -92,6 +92,18 @@
       file:///home/arne/Desktop/projects projects
     '';
 
+    home.file.".ssh/config".text = ''
+      Host ssh.dev.azure.com
+        User git
+        PubkeyAcceptedAlgorithms +ssh-rsa
+        HostkeyAlgorithms +ssh-rsa
+      
+      Host vs-ssh.visualstudio.com
+        User git
+        PubkeyAcceptedAlgorithms +ssh-rsa
+        HostkeyAlgorithms +ssh-rsa
+    '';
+
     programs.git = {
       extraConfig = {
         commit.gpgsign = true;
