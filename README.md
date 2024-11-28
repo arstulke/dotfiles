@@ -122,7 +122,10 @@ Steps:
             3. On personal-desktop: Add Keybinding "Toggle Deafen" on L2 macro key 
         2. Spotify: Login
     6. for work-laptop:
-        1. copy `~/.aws/config` and `~/.aws/credentials` from old system to home directory
+        1. copy files from old system to home directory:
+            1. `~/.aws/config`
+            2. `~/.aws/credentials`
+            3. `~/.npmrc`
         2. copy keepass file from old system to desktop
         3. copy OpenVPN profiles from old system to desktop or a subfolder & import the .ovpn file using the Networkmanager-GUI (see system Settings GUI > Network)
 
