@@ -3,7 +3,7 @@
 {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
   # self-explaining one-liners
   console.keyMap = "de";
@@ -12,7 +12,7 @@
 
   # nix experimental features
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
         experimental-features = nix-command flakes
     '';
@@ -114,7 +114,7 @@
   #################################
   environment.shellAliases = {
     rebuild = "sudo nixos-rebuild switch --flake /etc/dotfiles/nix#$NIX_FLAKE_DEFAULT_HOST";
-    update = "nix flake update /etc/dotfiles/nix";
+    update = "nix flake update --flake /etc/dotfiles/nix";
     serve = "static-web-server --port 3000 --root ./";
     encrypt-as-zip = "function _ezip() { zip --encrypt \"\${1}.zip\" \"\$1\"; }; _ezip";
   };
@@ -129,7 +129,7 @@
     # basic home-manager config
     home.username = "arne";
     home.homeDirectory = "/home/arne";
-    home.stateVersion = "24.05";
+    home.stateVersion = "24.11";
     programs.home-manager.enable = true;
 
     # custom config

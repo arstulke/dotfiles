@@ -13,7 +13,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # gnome
-    gnome3.dconf-editor
+    dconf-editor
     gnomeExtensions.dash-to-dock
     gnomeExtensions.user-themes
     gnomeExtensions.system-monitor
