@@ -3,6 +3,7 @@
 {
   imports = [
     ../modules/airplay-server.nix
+    ../modules/ausweis-app.nix
   ];
 
   #################################
@@ -15,7 +16,6 @@
     # general
     discord
     spotify
-    ausweisapp
 
     # Jetbrains
     jetbrains.idea-ultimate
