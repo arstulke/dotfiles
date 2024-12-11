@@ -98,12 +98,12 @@
     pubkeyAcceptedKeyTypes = [ "ssh-ed25519" "ssh-rsa" ];
   };
 
-  virtualisation.docker = {
-    enable = true;
-    # better security than adding user to "docker" group
-    rootless = {
+  virtualisation = {
+    oci-containers.backend = "podman";
+    podman = {
       enable = true;
-      setSocketVariable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
     };
   };
 

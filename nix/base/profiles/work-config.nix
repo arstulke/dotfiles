@@ -1,6 +1,10 @@
 { config, pkgs, lib, nix-vscode-extensions, ... }:
 
 {
+  imports = [
+    ../modules/nocodb.nix
+  ];
+
   #################################
   ############ PACKAGES ###########
   #################################
