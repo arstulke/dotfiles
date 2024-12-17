@@ -72,6 +72,7 @@
     git
     bash
     zip
+    unzip
     vim
     nano
     wget
