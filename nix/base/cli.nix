@@ -85,6 +85,7 @@
     usbutils
     xsensors
     static-web-server # http server
+    podman-compose
   ];
   
   #################################
