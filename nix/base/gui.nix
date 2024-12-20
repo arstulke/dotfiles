@@ -27,6 +27,7 @@
     google-chrome
     pdfarranger
     drawio
+    libreoffice
     
     # technical
     sublime-merge
