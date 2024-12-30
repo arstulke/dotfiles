@@ -20,6 +20,10 @@
                         numpy # just an example
                     ]))
                 ];
+
+                shellHook = ''
+                    export PYTHONDONTWRITEBYTECODE=1
+                '';
             };
         });
 }
