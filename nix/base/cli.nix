@@ -81,6 +81,7 @@
     traceroute
     speedtest-cli
     htop
+    btop
     jq  # format json
     usbutils
     xsensors
