@@ -1,0 +1,137 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background_templates": [
+            "{{if .Root }}#EF4444{{else}}#0077C2{{end}}"
+          ],
+          "foreground": "#FFFFFF",
+          "leading_diamond": "\u256d\u2500\ue0b6",
+          "style": "diamond",
+          "template": " {{ if .SSHSession }}\ueb39{{else}}\uf108{{ end }} {{if .Root }}\udb85\udc0b{{end}} {{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#FB923C",
+          "foreground": "#111827",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "folder_icon": " \uf07b ",
+            "home_icon": "\ue617",
+            "style": "folder"
+          },
+          "style": "powerline",
+          "template": " \uf07b  {{ .Location }} ",
+          "type": "path"
+        },
+        {
+          "background": "#22C55E",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FDE047{{ end }}",
+            "{{ if gt .Ahead 0 }}#C084FC{{ end }}",
+            "{{ if gt .Behind 0 }}#C084FC{{ end }}"
+          ],
+          "foreground": "#030712",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
+          "type": "git"
+        },
+        {
+          "background": "transparent",
+          "foreground": "white",
+          "powerline_symbol": "\u0008\ue0b4",
+          "style": "powerline",
+          "template": "⠀",
+          "type": "text"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#6DACD9",
+          "style": "plain",
+          "template": "\uf313 {{ if eq .Type \"unknown\" }}OS{{ else }}nix-shell{{ end }}",
+          "type": "nix-shell"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#565656",
+          "foreground": "#FAA029",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "aws"
+        },
+        {
+          "background": "#326DE6",
+          "foreground": "#FFFFFF",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "\uf308 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}",
+          "trailing_diamond": "\ue0b4",
+          "type": "kubectl"
+        },
+        {
+          "background": "#38BDF8",
+          "foreground": "#030712",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "template": " \uf017  {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground_templates": [
+            "{{if .Root }}#EF4444{{else}}#0077C2{{end}}"
+          ],
+          "style": "plain",
+          "template": "\u2570\u2500",
+          "type": "text"
+        },
+        {
+          "foreground": "#FFFFFF",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\ue285\ueab6 ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{.Location}}{{if .Root}} :: root{{end}} :: {{.Shell}}",
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FFFFFF",
+    "template": "{{ .UserName }}@{{ .HostName }}:{{ .Segments.Path.Location }} \ue285 "
+  },
+  "version": 3
+}

@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ../modules/shell/fish-shell.nix
+    
     ../modules/airplay-server.nix
     ../modules/ausweis-app.nix
     ../modules/nocodb.nix
@@ -95,6 +97,7 @@
     home.file.".config/Code/User/settings.json".text = builtins.toJSON {
       "editor.wordWrap" = "on";
       "editor.fontSize" = 14;
+      "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
       "terminal.integrated.fontSize" = 14;
     };
 

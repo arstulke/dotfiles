@@ -86,8 +86,8 @@
   #################################
   environment.shellAliases = {
     cdconfig = "cd /etc/dotfiles";
-    cddownloads = "cd ~/Downloads";
-    cdprojects = "cd ~/Desktop/projects";
+    cddownloads = "cd /home/arne/Downloads";
+    cdprojects = "cd /home/arne/Desktop/projects";
     cls = "echo 'Are you stupid? I hate Windows and CMD!'";
   };
 
@@ -225,4 +225,6 @@
     mkdir -p /home/$USER/Desktop
     mkdir -p /home/$USER/Desktop/projects
   '';
+
+  users.defaultUserShell = pkgs.fish;
 }

@@ -88,7 +88,12 @@
     static-web-server # http server
     podman-compose
   ];
-  
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    jetbrains-mono
+  ];
+
   #################################
   ###### PROGRAMS / SERVICES ######
   #################################
@@ -130,6 +135,11 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "backup";
+  home-manager.users.root = {
+    # minimal home-manager config
+    home.username = "root";
+    home.stateVersion = "24.11";
+  };
   home-manager.users.arne = {
     # basic home-manager config
     home.username = "arne";
