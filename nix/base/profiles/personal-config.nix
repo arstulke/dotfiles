@@ -64,6 +64,7 @@
 
     # other
     yubioath-flutter
+    keepassxc
     thefuck
   ];
 
