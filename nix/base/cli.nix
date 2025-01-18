@@ -121,7 +121,7 @@
     update = "nix flake update --flake /etc/dotfiles/nix";
     free-nix = "sudo nix-collect-garbage --delete-older-than 30d";
     serve = "static-web-server --port 3000 --root ./";
-    encrypt-as-zip = "function _ezip() { zip --encrypt \"\${1}.zip\" \"\$1\"; }; _ezip";
+    encrypt-as-zip = "#!/bin/bash\\nfunction _ezip() { zip --encrypt \"\${1}.zip\" \"\$1\"; }; _ezip";
   };
 
   #################################
