@@ -5,6 +5,7 @@
     ../modules/airplay-server.nix
     ../modules/ausweis-app.nix
     ../modules/nocodb.nix
+    ../modules/quick-share.nix
   ];
 
   #################################
