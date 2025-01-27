@@ -59,6 +59,16 @@
 
     # AWS stuff
     awscli2
+    ssm-session-manager-plugin
+
+    # Kubernetes stuff
+    kubectl
+    kubernetes-helm
+    (wrapHelm kubernetes-helm {
+      plugins = with pkgs.kubernetes-helmPlugins; [
+        helm-diff
+      ];
+    })
 
     # Javascript stuff
     nodejs_20  # switch to v22 in October 2024 (because it is currently not LTS)
