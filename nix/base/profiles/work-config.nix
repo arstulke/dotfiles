@@ -69,6 +69,7 @@
         helm-diff
       ];
     })
+    k9s
 
     # Javascript stuff
     nodejs_20  # switch to v22 in October 2024 (because it is currently not LTS)

@@ -126,6 +126,9 @@ Steps:
             1. `~/.aws/config`
             2. `~/.aws/credentials`
             3. `~/.npmrc`
+            4. `~/.yarnrc`
+            5. `~/.yarnrc.yml`
+            6. `~/.kube/config`
         2. copy keepass file from old system to desktop
         3. copy OpenVPN profiles from old system to desktop or a subfolder & import the .ovpn file using the Networkmanager-GUI (see system Settings GUI > Network)
 
