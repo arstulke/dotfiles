@@ -116,8 +116,8 @@
   ######### SHELL ALIASES #########
   #################################
   environment.shellAliases = {
-    rebuild = "sudo nixos-rebuild switch --flake /etc/dotfiles/nix#$NIX_FLAKE_DEFAULT_HOST";
-    rebuild-test = "sudo nixos-rebuild test --flake /etc/dotfiles/nix#$NIX_FLAKE_DEFAULT_HOST";
+    rebuild = "sudo nixos-rebuild switch --flake /etc/dotfiles/nix#$NIX_FLAKE_DEFAULT_HOST --impure";
+    rebuild-test = "sudo nixos-rebuild test --flake /etc/dotfiles/nix#$NIX_FLAKE_DEFAULT_HOST --impure";
     update = "nix flake update --flake /etc/dotfiles/nix";
     free-nix = "sudo nix-collect-garbage --delete-older-than 30d";
     serve = "static-web-server --port 3000 --root ./";
