@@ -50,7 +50,7 @@
           "foreground": "white",
           "powerline_symbol": "\u0008\ue0b4",
           "style": "powerline",
-          "template": "⠀",
+          "template": " ",
           "type": "text"
         },
         {
@@ -74,15 +74,6 @@
           "template": "\ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}",
           "trailing_diamond": "\ue0b4 ",
           "type": "aws"
-        },
-        {
-          "background": "#326DE6",
-          "foreground": "#FFFFFF",
-          "leading_diamond": "\ue0b6",
-          "style": "diamond",
-          "template": "\uf308 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}",
-          "trailing_diamond": "\ue0b4",
-          "type": "kubectl"
         },
         {
           "background": "#38BDF8",

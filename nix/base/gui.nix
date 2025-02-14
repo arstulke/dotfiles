@@ -225,6 +225,4 @@
     mkdir -p /home/$USER/Desktop
     mkdir -p /home/$USER/Desktop/projects
   '';
-
-  users.defaultUserShell = pkgs.fish;
 }

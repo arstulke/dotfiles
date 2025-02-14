@@ -38,4 +38,6 @@
       enableFishIntegration = true;
     };
   });
+
+  users.defaultUserShell = pkgs.fish;
 }
