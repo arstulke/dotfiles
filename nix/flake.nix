@@ -11,6 +11,10 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    aws-vpn-client = {
+      url = "github:JonathanxD/openaws-vpn-client";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
