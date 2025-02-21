@@ -13,22 +13,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-vscode-extensions, nix-ld }: {
-    nixosConfigurations = builtins.mapAttrs (device: value: nixpkgs.lib.nixosSystem {
-      system = value.system;
+  outputs = inputs: {
+    nixosConfigurations = builtins.mapAttrs (device: value: inputs.nixpkgs.lib.nixosSystem {
+      inherit (value) system;
       specialArgs = {
-        inherit nix-vscode-extensions;
-        device = device;
-        pkgs-unstable = import nixpkgs-unstable {
-          system = value.system;
+        inherit inputs device;
+        pkgs-unstable = import inputs.nixpkgs-unstable {
+          inherit (value) system;
           config.allowUnfree = true;
         };
       };
       modules = [
         ./base/minimum.nix
         ./devices/${device}/default.nix
-        nix-ld.nixosModules.nix-ld
-        home-manager.nixosModules.home-manager
+        inputs.nix-ld.nixosModules.nix-ld
+        inputs.home-manager.nixosModules.home-manager
       ];
     }) {
       personal-desktop = { system = "x86_64-linux"; };

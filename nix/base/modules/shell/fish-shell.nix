@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nix-vscode-extensions, ... }:
+{ pkgs, lib, ... }:
 
 {
 
@@ -30,7 +30,7 @@
     programs.oh-my-posh = {
       enable = true;
       enableFishIntegration = true;
-      settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "/etc/dotfiles/nix/base/modules/shell/oh-my-posh-config.json"));
+      settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./oh-my-posh-config.json));
     };
 
     programs.atuin = {

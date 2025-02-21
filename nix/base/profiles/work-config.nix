@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nix-vscode-extensions, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -31,7 +31,7 @@
       });
 
       vscodeExtensions = let
-        vscode-extensions = nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
+        vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
       in
         with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} [
           vscode-extensions.vscode-marketplace
