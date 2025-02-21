@@ -19,6 +19,8 @@
     # Jetbrains
     jetbrains.idea-ultimate
 
+    aws-vpn-client
+
     # VS Code
     (vscode-with-extensions.override {
       # TODO remove after unstable updated to 1.93.0
