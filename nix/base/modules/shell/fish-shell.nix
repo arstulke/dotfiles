@@ -37,6 +37,10 @@
       enable = true;
       enableFishIntegration = true;
     };
+    home.file.".config/atuin/config.toml".text = ''
+      filter_mode = "workspace"
+      workspaces = true
+    '';
   });
 
   users.defaultUserShell = pkgs.fish;
