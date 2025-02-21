@@ -18,14 +18,10 @@
       inherit (value) system;
       specialArgs = {
         inherit inputs device;
-        pkgs-unstable = import inputs.nixpkgs-unstable {
-          inherit (value) system;
-          config.allowUnfree = true;
-        };
       };
       modules = [
         ./base/minimum.nix
-        ./devices/${device}/default.nix
+        ./devices/${device}
         inputs.nix-ld.nixosModules.nix-ld
         inputs.home-manager.nixosModules.home-manager
       ];
@@ -34,5 +30,6 @@
       personal-laptop = { system = "x86_64-linux"; };
       work-laptop = { system = "x86_64-linux"; };
     };
+    overlays = import ./overlays.nix inputs;
   };
 }

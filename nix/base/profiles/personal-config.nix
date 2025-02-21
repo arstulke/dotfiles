@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -9,6 +9,8 @@
     ../modules/nocodb.nix
     ../modules/quick-share.nix
   ];
+
+  nixpkgs.overlays = [inputs.self.overlays.default];
 
   #################################
   ############ PACKAGES ###########
@@ -23,7 +25,7 @@
 
     # Jetbrains
     jetbrains.idea-ultimate
-    pkgs-unstable.jetbrains.webstorm
+    unstable.jetbrains.webstorm
 
     # VS Code
     (vscode-with-extensions.override {
