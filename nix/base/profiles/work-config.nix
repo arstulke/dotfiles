@@ -17,8 +17,6 @@
     # Jetbrains
     jetbrains.idea-ultimate
 
-    aws-vpn-client
-
     # VS Code
     (vscode-with-extensions.override {
       # TODO remove after unstable updated to 1.93.0
@@ -64,6 +62,7 @@
     # AWS stuff
     awscli2
     ssm-session-manager-plugin
+    openaws-vpn-client
 
     # Kubernetes stuff
     kubectl

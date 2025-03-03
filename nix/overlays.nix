@@ -7,12 +7,12 @@ inputs: rec {
     };
 
     # TODO remove after project uses flakes correctly
-    aws-vpn-client = final: prev: {
-        aws-vpn-client = inputs.aws-vpn-client.defaultPackage.${prev.system};
+    openaws-vpn-client = final: prev: {
+        openaws-vpn-client = inputs.openaws-vpn-client.defaultPackage.${prev.system};
     };
 
     default = inputs.nixpkgs.lib.composeManyExtensions [
         all-channels
-        aws-vpn-client
+        openaws-vpn-client
     ];
 }

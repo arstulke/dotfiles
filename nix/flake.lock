@@ -1,28 +1,5 @@
 {
   "nodes": {
-    "aws-vpn-client": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "naersk": "naersk",
-        "nixpkgs": [
-          "nixpkgs-aws-vpn-client"
-        ],
-        "nixpkgs-mozilla": "nixpkgs-mozilla"
-      },
-      "locked": {
-        "lastModified": 1733004669,
-        "narHash": "sha256-T281JyXFxBLbWeMmqHBEM2IVHXbZzQvO/YWUqpeZ6R8=",
-        "owner": "JonathanxD",
-        "repo": "openaws-vpn-client",
-        "rev": "ece1a631326a224ad471deffd8e42cbe7293eb57",
-        "type": "github"
-      },
-      "original": {
-        "owner": "JonathanxD",
-        "repo": "openaws-vpn-client",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -44,11 +21,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1705309234,
-        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
+        "lastModified": 1710146030,
+        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
         "type": "github"
       },
       "original": {
@@ -62,11 +39,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
         "type": "github"
       },
       "original": {
@@ -98,7 +75,7 @@
     },
     "naersk": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1698420672,
@@ -137,8 +114,8 @@
     "nix-vscode-extensions": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2"
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1733882180,
@@ -156,31 +133,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1702900294,
-        "narHash": "sha256-pt7sSoJYNw3n8YtXw0Z/Nnr6/PfY2YrjDvqboErXnRM=",
+        "lastModified": 1713805509,
+        "narHash": "sha256-YgSEan4CcrjivCNO5ZNzhg7/8ViLkZ4CB/GrGBVSudo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
+        "rev": "1e1dc66fe68972a76679644a5577828b6a7e8be4",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs-aws-vpn-client": {
-      "locked": {
-        "lastModified": 1702900294,
-        "narHash": "sha256-pt7sSoJYNw3n8YtXw0Z/Nnr6/PfY2YrjDvqboErXnRM=",
-        "owner": "nixos",
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
-        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
         "type": "github"
       }
     },
@@ -197,6 +160,22 @@
       "original": {
         "owner": "mozilla",
         "repo": "nixpkgs-mozilla",
+        "type": "github"
+      }
+    },
+    "nixpkgs-openaws-vpn-client": {
+      "locked": {
+        "lastModified": 1702900294,
+        "narHash": "sha256-pt7sSoJYNw3n8YtXw0Z/Nnr6/PfY2YrjDvqboErXnRM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
         "type": "github"
       }
     },
@@ -218,22 +197,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1713805509,
-        "narHash": "sha256-YgSEan4CcrjivCNO5ZNzhg7/8ViLkZ4CB/GrGBVSudo=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "1e1dc66fe68972a76679644a5577828b6a7e8be4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1733808091,
         "narHash": "sha256-KWwINTQelKOoQgrXftxoqxmKFZb9pLVfnRvK270nkVk=",
         "owner": "nixos",
@@ -248,15 +211,52 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1702900294,
+        "narHash": "sha256-pt7sSoJYNw3n8YtXw0Z/Nnr6/PfY2YrjDvqboErXnRM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "openaws-vpn-client": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "naersk": "naersk",
+        "nixpkgs": [
+          "nixpkgs-openaws-vpn-client"
+        ],
+        "nixpkgs-mozilla": "nixpkgs-mozilla"
+      },
+      "locked": {
+        "lastModified": 1733004669,
+        "narHash": "sha256-T281JyXFxBLbWeMmqHBEM2IVHXbZzQvO/YWUqpeZ6R8=",
+        "owner": "JonathanxD",
+        "repo": "openaws-vpn-client",
+        "rev": "ece1a631326a224ad471deffd8e42cbe7293eb57",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JonathanxD",
+        "repo": "openaws-vpn-client",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "aws-vpn-client": "aws-vpn-client",
         "home-manager": "home-manager",
         "nix-ld": "nix-ld",
         "nix-vscode-extensions": "nix-vscode-extensions",
-        "nixpkgs": "nixpkgs_3",
-        "nixpkgs-aws-vpn-client": "nixpkgs-aws-vpn-client",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-openaws-vpn-client": "nixpkgs-openaws-vpn-client",
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "openaws-vpn-client": "openaws-vpn-client"
       }
     },
     "systems": {
