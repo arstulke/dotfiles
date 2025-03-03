@@ -11,9 +11,11 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixpkgs-aws-vpn-client.url = "github:nixos/nixpkgs?rev=886c9aee6ca9324e127f9c2c4e6f68c2641c8256";
     aws-vpn-client = {
       url = "github:JonathanxD/openaws-vpn-client";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-aws-vpn-client";
     };
   };
 

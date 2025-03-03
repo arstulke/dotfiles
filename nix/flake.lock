@@ -5,7 +5,7 @@
         "flake-utils": "flake-utils",
         "naersk": "naersk",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-aws-vpn-client"
         ],
         "nixpkgs-mozilla": "nixpkgs-mozilla"
       },
@@ -168,6 +168,22 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-aws-vpn-client": {
+      "locked": {
+        "lastModified": 1702900294,
+        "narHash": "sha256-pt7sSoJYNw3n8YtXw0Z/Nnr6/PfY2YrjDvqboErXnRM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "886c9aee6ca9324e127f9c2c4e6f68c2641c8256",
+        "type": "github"
+      }
+    },
     "nixpkgs-mozilla": {
       "flake": false,
       "locked": {
@@ -239,6 +255,7 @@
         "nix-ld": "nix-ld",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-aws-vpn-client": "nixpkgs-aws-vpn-client",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
