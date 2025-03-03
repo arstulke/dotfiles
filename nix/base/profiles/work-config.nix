@@ -7,8 +7,6 @@
     ../modules/nocodb.nix
   ];
 
-  nixpkgs.overlays = [inputs.self.overlays.default];
-
   #################################
   ############ PACKAGES ###########
   #################################
