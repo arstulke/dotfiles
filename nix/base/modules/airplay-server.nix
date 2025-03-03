@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nix-vscode-extensions, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [ uxplay ];

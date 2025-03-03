@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, nix-vscode-extensions, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -9,6 +9,8 @@
     ../modules/nocodb.nix
     ../modules/quick-share.nix
   ];
+
+  nixpkgs.overlays = [inputs.self.overlays.default];
 
   #################################
   ############ PACKAGES ###########
@@ -23,19 +25,19 @@
 
     # Jetbrains
     jetbrains.idea-ultimate
-    pkgs-unstable.jetbrains.webstorm
+    unstable.jetbrains.webstorm
 
     # VS Code
     (vscode-with-extensions.override {
       vscodeExtensions = let
-        vscode-extensions = nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
+        vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
       in
-        with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} [
-          vscode-extensions.vscode-marketplace
-          vscode-extensions.open-vsx
-          vscode-extensions.vscode-marketplace-release
-          vscode-extensions.open-vsx-release
-        ];
+        with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} (with vscode-extensions; [
+          vscode-marketplace
+          open-vsx
+          vscode-marketplace-release
+          open-vsx-release
+        ]);
       [
         # general
         k--kato.intellij-idea-keybindings

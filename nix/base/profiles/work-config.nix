@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nix-vscode-extensions, ... }:
+{ pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -6,6 +6,8 @@
     
     ../modules/nocodb.nix
   ];
+
+  nixpkgs.overlays = [inputs.self.overlays.default];
 
   #################################
   ############ PACKAGES ###########
@@ -16,6 +18,8 @@
   environment.systemPackages = with pkgs; [
     # Jetbrains
     jetbrains.idea-ultimate
+
+    aws-vpn-client
 
     # VS Code
     (vscode-with-extensions.override {
@@ -31,7 +35,7 @@
       });
 
       vscodeExtensions = let
-        vscode-extensions = nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
+        vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
       in
         with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} [
           vscode-extensions.vscode-marketplace
