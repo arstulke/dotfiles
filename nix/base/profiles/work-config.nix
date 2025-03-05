@@ -4,6 +4,7 @@
   imports = [
     ../modules/shell/fish-shell.nix
     
+    ../modules/openaws-vpn-client.nix
     ../modules/nocodb.nix
   ];
 
@@ -62,7 +63,6 @@
     # AWS stuff
     awscli2
     ssm-session-manager-plugin
-    openaws-vpn-client
 
     # Kubernetes stuff
     kubectl
