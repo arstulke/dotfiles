@@ -42,6 +42,9 @@
         axelrindle.duplicate-file
         ms-azuretools.vscode-docker
 
+        # mermaid
+        bierner.markdown-mermaid
+
         # nix
         bbenoist.nix
         mkhl.direnv
