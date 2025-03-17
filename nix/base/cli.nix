@@ -75,18 +75,24 @@
     unzip
     vim
     nano
+    jq  # format json
+    podman-compose
+
+    # network
     wget
     curl
     bind
     traceroute
     speedtest-cli
+    static-web-server # http server
+    nmap
+    inetutils
+    
+    # hardware resources
     htop
     btop
-    jq  # format json
     usbutils
     xsensors
-    static-web-server # http server
-    podman-compose
   ];
 
   fonts.packages = with pkgs; [

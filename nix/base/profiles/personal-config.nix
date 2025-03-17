@@ -41,6 +41,7 @@
         k--kato.intellij-idea-keybindings
         axelrindle.duplicate-file
         ms-azuretools.vscode-docker
+        ms-vscode.hexeditor
 
         # mermaid
         bierner.markdown-mermaid
