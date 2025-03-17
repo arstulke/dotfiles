@@ -137,6 +137,7 @@
           "org.keepassxc.KeePassXC.desktop"
           "com.yubico.authenticator.desktop"
           "org.gnome.Nautilus.desktop"
+          "discord.desktop"
           "code.desktop"
           "idea-ultimate.desktop"
           "webstorm.desktop"
