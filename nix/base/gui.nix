@@ -24,7 +24,12 @@
     vlc
     pinta
     firefox
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [
+        "--enable-features=UseOzonePlatform"
+        "--ozone-platform=wayland"
+      ];
+    })
     pdfarranger
     drawio
     libreoffice
