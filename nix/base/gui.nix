@@ -3,6 +3,7 @@
 {
   imports = [
     ./cli.nix
+    ./modules/noisetorch.nix
   ];
 
   #################################
@@ -79,9 +80,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Microhpone noise suppression
-  programs.noisetorch.enable = true;
 
   # Install firefox
   programs.firefox.enable = true;
