@@ -29,5 +29,8 @@
   }];
 
   # Network
-  networking.hostName = "arne-desktop"; # Define your hostname.
+  networking = {
+    hostName = "arne-desktop";
+    interfaces.enp5s0.wakeOnLan.enable = true;
+  };
 }
