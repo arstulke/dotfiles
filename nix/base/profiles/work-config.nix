@@ -32,14 +32,18 @@
       });
 
       vscodeExtensions = let
-        vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
+        pkgs-ext = import inputs.nixpkgs {
+          inherit (pkgs) system;
+          config.allowUnfree = true;
+          overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+        };
       in
-        with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} [
-          vscode-extensions.vscode-marketplace
-          # vscode-extensions.open-vsx # TODO use after ms-toolsai.jupyter is updated to v2024.8.x
-          vscode-extensions.vscode-marketplace-release
-          # vscode-extensions.open-vsx-release # TODO use after ms-toolsai.jupyter is updated to v2024.8.x
-        ];
+        with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} (with pkgs-ext; [
+          vscode-marketplace
+          # open-vsx # TODO use after ms-toolsai.jupyter is updated to v2024.8.x
+          vscode-marketplace-release
+          # open-vsx-release # TODO use after ms-toolsai.jupyter is updated to v2024.8.x
+        ]);
       [
         # general
         k--kato.intellij-idea-keybindings

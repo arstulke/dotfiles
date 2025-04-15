@@ -28,9 +28,13 @@
     # VS Code
     (vscode-with-extensions.override {
       vscodeExtensions = let
-        vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
+        pkgs-ext = import inputs.nixpkgs {
+          inherit (pkgs) system;
+          config.allowUnfree = true;
+          overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+        };
       in
-        with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} (with vscode-extensions; [
+        with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} (with pkgs-ext; [
           vscode-marketplace
           open-vsx
           vscode-marketplace-release
