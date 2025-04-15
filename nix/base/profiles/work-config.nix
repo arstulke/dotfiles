@@ -53,12 +53,8 @@
         bbenoist.nix
         mkhl.direnv
 
-        # remote workspaces
-        ms-vscode-remote.remote-containers
-
         # python
         ms-toolsai.jupyter
-        ms-python.vscode-pylance
         ms-python.python
       ];
     })

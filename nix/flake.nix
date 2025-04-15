@@ -8,7 +8,7 @@
     };
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-ld = {
-      url = "github:Mic92/nix-ld";
+      url = "github:nix-community/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
