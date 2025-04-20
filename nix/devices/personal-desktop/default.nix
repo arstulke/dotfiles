@@ -6,7 +6,12 @@
     ../../base/gui.nix
     ../../base/profiles/personal-config.nix
   ];
-    
+
+  # Add graphics driver
+  boot.kernelParams = [ "nouveau.modeset=0" ]; # disabling nouveau (community opensource driver alternative for nvidia)
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = false; # opensource drivers only supported for Turing or later GPUs (RTX series, GTX 16xx)
+
   # Bootloader
   # TODO switch to GRUB
   # - current issue: installation of GRUB creates EFI entry in `efibootmgr` but it will be deleted during boot
