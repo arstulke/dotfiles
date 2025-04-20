@@ -69,6 +69,9 @@
     openscad
     prusa-slicer
 
+    # gaming
+    prismlauncher
+
     # other
     yubioath-flutter
     keepassxc
