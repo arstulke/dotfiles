@@ -100,7 +100,9 @@
   #################################
   ######### SHELL ALIASES #########
   #################################
-  # no additional config (see nix/base/gui.nix)
+  programs.fish.shellAbbrs = {
+    edit-aws = "code ~/.aws/";
+  };
 
   #################################
   ########## HOME-MANAGER #########

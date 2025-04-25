@@ -88,10 +88,14 @@
   ######### SHELL ALIASES #########
   #################################
   environment.shellAliases = {
+    cls = "echo 'Are you stupid? I hate Windows and CMD!'";
+  };
+
+  programs.fish.shellAbbrs = {
     cdconfig = "cd /etc/dotfiles";
     cddownloads = "cd /home/arne/Downloads";
     cdprojects = "cd /home/arne/Desktop/projects";
-    cls = "echo 'Are you stupid? I hate Windows and CMD!'";
+    edit-config = "code /etc/dotfiles";
   };
 
   #################################
