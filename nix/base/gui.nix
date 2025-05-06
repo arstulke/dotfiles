@@ -29,6 +29,7 @@
       commandLineArgs = [
         "--enable-features=UseOzonePlatform"
         "--ozone-platform=wayland"
+        "--disable-gtk-ime"
       ];
     })
     pdfarranger
