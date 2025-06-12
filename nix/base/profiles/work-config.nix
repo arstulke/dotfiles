@@ -67,6 +67,10 @@
       ];
     })
 
+    # VSC
+    gh
+    github-desktop
+
     # AWS stuff
     awscli2
     ssm-session-manager-plugin
