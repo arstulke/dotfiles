@@ -63,6 +63,9 @@
         ms-toolsai.jupyter
         ms-python.vscode-pylance
         ms-python.python
+
+        # typescript
+        denoland.vscode-deno
       ];
     })
 
@@ -85,8 +88,6 @@
   #################################
   ###### PROGRAMS / SERVICES ######
   #################################
-  services.pcscd.enable = true; # required for Yubico Authenticator
-
   networking.firewall = {
     allowedTCPPorts = [];
     allowedUDPPorts = [
@@ -94,6 +95,18 @@
       5353 # mDNS
       5540 # Matter
     ];
+  };
+
+  services.pcscd.enable = true; # required for Yubico Authenticator
+
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+    environmentVariables = {
+      OLLAMA_NUM_PARALLEL = "2";
+      OLLAMA_MAX_LOADED_MODELS = "2";
+      OLLAMA_NOHISTORY = "1";
+    };
   };
 
   programs.steam = {
@@ -122,6 +135,7 @@
       "editor.fontSize" = 14;
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
       "terminal.integrated.fontSize" = 14;
+      "markdown.preview.fontSize" = 20;
     };
 
     home.file.".config/gtk-3.0/bookmarks".text = ''
