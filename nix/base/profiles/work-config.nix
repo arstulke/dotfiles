@@ -94,6 +94,7 @@
     yubioath-flutter
     keepassxc
     thefuck
+    xournalpp
   ];
 
   #################################
