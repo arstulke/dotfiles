@@ -33,6 +33,7 @@
       ];
     })
     pdfarranger
+    xournalpp
     drawio
     libreoffice
     
