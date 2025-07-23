@@ -42,6 +42,7 @@
     wireshark
     gparted
     insomnia
+    bruno
   ];
 
   #################################
