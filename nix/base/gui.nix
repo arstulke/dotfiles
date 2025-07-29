@@ -92,6 +92,7 @@
   #################################
   environment.shellAliases = {
     cls = "echo 'Are you stupid? I hate Windows and CMD!'";
+    notes = "code --new-window ~/Downloads/tmp.md";
   };
 
   programs.fish.shellAbbrs = {
