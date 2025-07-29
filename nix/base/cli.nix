@@ -3,7 +3,7 @@
 {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
   # self-explaining one-liners
   console.keyMap = "de";
@@ -99,7 +99,7 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
     jetbrains-mono
   ];
 
@@ -147,13 +147,13 @@
   home-manager.users.root = {
     # minimal home-manager config
     home.username = "root";
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.05";
   };
   home-manager.users.arne = {
     # basic home-manager config
     home.username = "arne";
     home.homeDirectory = "/home/arne";
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.05";
     programs.home-manager.enable = true;
 
     # custom config
