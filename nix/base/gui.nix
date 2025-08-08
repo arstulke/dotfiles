@@ -153,6 +153,7 @@
           "idea-ultimate.desktop"
           "webstorm.desktop"
           "sublime_merge.desktop"
+          "Logseq.desktop"
           "org.gnome.Console.desktop"
           "google-chrome.desktop"
         ];
