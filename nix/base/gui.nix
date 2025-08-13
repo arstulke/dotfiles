@@ -15,9 +15,11 @@
   environment.systemPackages = with pkgs; [
     # gnome
     dconf-editor
+    gnome-tweaks
     gnomeExtensions.dash-to-dock
     gnomeExtensions.user-themes
     gnomeExtensions.system-monitor
+    gnomeExtensions.clipboard-history
     yaru-theme
 
     # general
@@ -116,6 +118,7 @@
           pkgs.gnomeExtensions.dash-to-dock.extensionUuid
           pkgs.gnomeExtensions.user-themes.extensionUuid
           pkgs.gnomeExtensions.system-monitor.extensionUuid
+          pkgs.gnomeExtensions.clipboard-history.extensionUuid
         ];
       };
       "org/gnome/desktop/interface" = {
