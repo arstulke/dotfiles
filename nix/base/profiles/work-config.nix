@@ -65,6 +65,9 @@
         ms-toolsai.jupyter
         ms-python.vscode-pylance
         ms-python.python
+
+        # AWS
+        amazonwebservices.aws-toolkit-vscode
       ];
     })
 
@@ -118,6 +121,7 @@
       "editor.fontSize" = 14;
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
       "terminal.integrated.fontSize" = 14;
+      "aws.telemetry" = false;
     };
 
     home.file.".config/gtk-3.0/bookmarks".text = ''
