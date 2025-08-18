@@ -21,17 +21,6 @@
 
     # VS Code
     (vscode-with-extensions.override {
-      # TODO remove after unstable updated to 1.93.0
-      vscode = pkgs.vscode.overrideAttrs(old: rec {
-        version = "1.96.0";
-        plat = "linux-x64";
-        src = fetchurl {
-          name = "VSCode_${version}_${plat}.tar.gz";
-          url = "https://update.code.visualstudio.com/${version}/${plat}/stable";
-          sha256 = "81M11Zt8NfKQvLgJ56Mjz/IXtm5qQJMrdpfdzD24dh0=";
-        };
-      });
-
       vscodeExtensions = let
         pkgs-ext = import inputs.nixpkgs {
           inherit (pkgs) system;
@@ -41,9 +30,9 @@
       in
         with pkgs.lib.foldl' (acc: set: pkgs.lib.recursiveUpdate acc set) {} (with pkgs-ext; [
           vscode-marketplace
-          # open-vsx # TODO use after ms-toolsai.jupyter is updated to v2024.8.x
+          open-vsx
           vscode-marketplace-release
-          # open-vsx-release # TODO use after ms-toolsai.jupyter is updated to v2024.8.x
+          open-vsx-release
         ]);
       [
         # general
