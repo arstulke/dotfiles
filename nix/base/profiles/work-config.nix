@@ -39,6 +39,7 @@
         k--kato.intellij-idea-keybindings
         axelrindle.duplicate-file
         ms-azuretools.vscode-docker
+        ms-vscode-remote.remote-ssh
 
         # mermaid
         bierner.markdown-mermaid
@@ -110,7 +111,13 @@
       "editor.fontSize" = 14;
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
       "terminal.integrated.fontSize" = 14;
+      
+      # Settings for AWS Toolkit & Sagemaker Remote access
       "aws.telemetry" = false;
+      "remote.SSH.connectTimeout" = 120;
+      "remote.SSH.defaultExtensions" = [
+        "amazonwebservices.aws-toolkit-vscode"
+      ];
     };
 
     home.file.".config/gtk-3.0/bookmarks".text = ''
@@ -130,7 +137,19 @@
         User git
         PubkeyAcceptedAlgorithms +ssh-rsa
         HostkeyAlgorithms +ssh-rsa
+
+      # Created by AWS Toolkit for VSCode. https://github.com/aws/aws-toolkit-vscode
+      Host sm_*
+        ForwardAgent yes
+        AddKeysToAgent yes
+        StrictHostKeyChecking accept-new
+        ProxyCommand '/home/arne/.config/Code/User/globalStorage/amazonwebservices.aws-toolkit-vscode/sagemaker_connect' '%n'
+        # User '%r'
     '';
+
+    home.file.".config/Code/User/globalStorage/amazonwebservices.aws-toolkit-vscode/tools/Amazon/sessionmanagerplugin" = {
+      source = "${pkgs.ssm-session-manager-plugin}";
+    };
 
     programs.git = {
       extraConfig = {
