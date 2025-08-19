@@ -66,7 +66,7 @@
     github-desktop
 
     # AWS stuff
-    awscli2
+    unstable.awscli2
     ssm-session-manager-plugin
 
     # Kubernetes stuff
