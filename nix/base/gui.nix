@@ -43,7 +43,6 @@
     sublime-merge
     wireshark
     gparted
-    insomnia
     bruno
   ];
 
