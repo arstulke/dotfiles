@@ -168,6 +168,7 @@
         edge-tiling = true;
         dynamic-workspaces = true;
         workspaces-only-on-primary = false;
+        experimental-features = ["scale-monitor-framebuffer" "xwayland-native-scaling"];
       };
       "org/gtk/gtk4/settings/file-chooser" = {
         show-hidden = true;
