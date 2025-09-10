@@ -43,7 +43,7 @@
     sublime-merge
     wireshark
     gparted
-    bruno
+    unstable.bruno
   ];
 
   #################################
