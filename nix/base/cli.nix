@@ -79,6 +79,7 @@
     vim
     nano
     jq  # format json
+    exiftool
     podman-compose
 
     # network
