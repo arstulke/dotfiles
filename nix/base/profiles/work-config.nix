@@ -159,5 +159,25 @@
       };
       userEmail = lib.mkForce "41028207+arstulke-btc@users.noreply.github.com";
     };
+
+    dconf.settings = {
+      "org/gnome/shell" = {
+        favorite-apps = [
+          "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" # Microsoft Teams PWA
+          "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop" # Microsoft Outlook PWA
+          "org.keepassxc.KeePassXC.desktop"
+          "com.yubico.authenticator.desktop"
+          "org.gnome.Nautilus.desktop"
+          "discord.desktop"
+          "code.desktop"
+          "idea-ultimate.desktop"
+          "webstorm.desktop"
+          "sublime_merge.desktop"
+          "Logseq.desktop"
+          "org.gnome.Console.desktop"
+          "google-chrome.desktop"
+        ];
+      };
+    };
   };
 }

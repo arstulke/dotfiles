@@ -143,5 +143,24 @@
       file:///home/arne/Downloads Downloads
       file:///home/arne/Desktop/projects projects
     '';
+
+    dconf.settings = {
+      "org/gnome/shell" = {
+        favorite-apps = [
+          "org.keepassxc.KeePassXC.desktop"
+          "com.yubico.authenticator.desktop"
+          "org.gnome.Nautilus.desktop"
+          "discord.desktop"
+          "steam.desktop"
+          "code.desktop"
+          "idea-ultimate.desktop"
+          "webstorm.desktop"
+          "sublime_merge.desktop"
+          "Logseq.desktop"
+          "org.gnome.Console.desktop"
+          "google-chrome.desktop"
+        ];
+      };
+    };
   };
 }

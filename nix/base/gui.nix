@@ -143,23 +143,6 @@
         disable-overview-on-startup = true;
         running-indicator-style = "DOTS";
       };
-      "org/gnome/shell" = {
-        favorite-apps = [
-          "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" # Microsoft Teams PWA
-          "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop" # Microsoft Outlook PWA
-          "org.keepassxc.KeePassXC.desktop"
-          "com.yubico.authenticator.desktop"
-          "org.gnome.Nautilus.desktop"
-          "discord.desktop"
-          "code.desktop"
-          "idea-ultimate.desktop"
-          "webstorm.desktop"
-          "sublime_merge.desktop"
-          "Logseq.desktop"
-          "org.gnome.Console.desktop"
-          "google-chrome.desktop"
-        ];
-      };
       "org/gnome/desktop/wm/preferences" = {
         button-layout = "appmenu:minimize,maximize,close";
       };
