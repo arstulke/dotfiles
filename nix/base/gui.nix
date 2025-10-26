@@ -212,15 +212,6 @@
   };
 
   system.userActivationScripts.manageDefaultDirs = ''
-    DIRS="Documents Music Public Templates Videos"
-  
-    for DIR in $DIRS; do
-      echo /home/$USER
-      if [ -d "/home/$USER/$DIR" ]; then
-        rm -rf "/home/$USER/$DIR"
-      fi
-    done
-
     mkdir -p /home/$USER/Desktop
     mkdir -p /home/$USER/Desktop/projects
   '';

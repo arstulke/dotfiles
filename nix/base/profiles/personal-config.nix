@@ -8,6 +8,7 @@
     ../modules/ausweis-app.nix
     ../modules/nocodb.nix
     ../modules/quick-share.nix
+    ../modules/virtual-remote-screen.nix
   ];
 
   #################################
@@ -119,6 +120,10 @@
     ];
   };
 
+  programs.obs-studio = {
+    enable = true;
+  };
+
   #################################
   ######### SHELL ALIASES #########
   #################################
@@ -142,6 +147,7 @@
       file:///etc/dotfiles dotfiles
       file:///home/arne/Downloads Downloads
       file:///home/arne/Pictures Pictures
+      file:///home/arne/Videos Videos
       file:///home/arne/Desktop/projects projects
     '';
 
