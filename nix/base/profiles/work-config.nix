@@ -123,6 +123,7 @@
     home.file.".config/gtk-3.0/bookmarks".text = ''
       file:///etc/dotfiles dotfiles
       file:///home/arne/Downloads Downloads
+      file:///home/arne/Pictures Pictures
       file:///home/arne/Desktop/notes notes
       file:///home/arne/Desktop/projects projects
     '';
