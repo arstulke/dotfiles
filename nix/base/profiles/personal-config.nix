@@ -149,16 +149,16 @@
         favorite-apps = [
           "org.keepassxc.KeePassXC.desktop"
           "com.yubico.authenticator.desktop"
-          "org.gnome.Nautilus.desktop"
+          "google-chrome.desktop"
           "discord.desktop"
           "steam.desktop"
           "code.desktop"
           "idea-ultimate.desktop"
           "webstorm.desktop"
           "sublime_merge.desktop"
+          "org.gnome.Nautilus.desktop"
           "Logseq.desktop"
           "org.gnome.Console.desktop"
-          "google-chrome.desktop"
         ];
       };
     };
