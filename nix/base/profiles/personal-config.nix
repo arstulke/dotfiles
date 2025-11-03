@@ -9,6 +9,7 @@
     ../modules/nocodb.nix
     ../modules/quick-share.nix
     ../modules/virtual-remote-screen.nix
+    ../modules/3d-printer-control.nix
   ];
 
   #################################
