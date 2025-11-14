@@ -36,6 +36,7 @@
     })
     pdfarranger
     xournalpp
+    kdePackages.okular
     drawio
     libreoffice
     
@@ -65,6 +66,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.cups-pdf.enable = true;
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
