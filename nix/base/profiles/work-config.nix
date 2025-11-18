@@ -164,12 +164,13 @@
     dconf.settings = {
       "org/gnome/shell" = {
         favorite-apps = [
-          "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" # Microsoft Teams PWA
-          "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop" # Microsoft Outlook PWA
+          "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop"     # Microsoft Teams PWA
+          "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop"     # Microsoft Outlook PWA
           "org.keepassxc.KeePassXC.desktop"
           "com.yubico.authenticator.desktop"
           "google-chrome.desktop"
-          "chrome-fmpnliohjhemenmnlpbfagaolkdacoja-Default.desktop" # Antrophic Claude
+          "chrome-eejcciocfhhpepllfdanigebammgampf-Profile_5.desktop"   # Employee Self Service
+          "chrome-fmpnliohjhemenmnlpbfagaolkdacoja-Default.desktop"     # Antrophic Claude
           "discord.desktop"
           "code.desktop"
           "idea-ultimate.desktop"
