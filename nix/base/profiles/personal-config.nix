@@ -23,7 +23,6 @@
     spotify
 
     # Jetbrains
-    jetbrains.idea-ultimate
     unstable.jetbrains.webstorm
 
     # VS Code
@@ -160,7 +159,6 @@
           "discord.desktop"
           "steam.desktop"
           "code.desktop"
-          "idea-ultimate.desktop"
           "webstorm.desktop"
           "sublime_merge.desktop"
           "org.gnome.Nautilus.desktop"
