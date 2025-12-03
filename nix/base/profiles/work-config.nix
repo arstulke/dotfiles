@@ -174,7 +174,6 @@
           "discord.desktop"
           "code.desktop"
           "idea-ultimate.desktop"
-          "webstorm.desktop"
           "sublime_merge.desktop"
           "org.gnome.Nautilus.desktop"
           "Logseq.desktop"
