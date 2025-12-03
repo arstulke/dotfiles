@@ -45,6 +45,7 @@
     wireshark
     gparted
     unstable.bruno
+    unstable.bruno-cli
   ];
 
   #################################
