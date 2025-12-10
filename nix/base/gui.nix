@@ -39,6 +39,8 @@
     kdePackages.okular
     drawio
     libreoffice
+    yubioath-flutter
+    keepassxc
     
     # technical
     sublime-merge

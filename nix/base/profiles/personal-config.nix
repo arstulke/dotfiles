@@ -80,9 +80,7 @@
     prismlauncher
 
     # other
-    yubioath-flutter
-    keepassxc
-    thefuck
+    # (currently empty)
   ];
 
   #################################

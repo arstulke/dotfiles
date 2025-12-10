@@ -85,15 +85,12 @@
 
     # other
     openvpn
-    yubioath-flutter
-    keepassxc
-    thefuck
   ];
 
   #################################
   ###### PROGRAMS / SERVICES ######
   #################################
-  services.pcscd.enable = true;
+  services.pcscd.enable = true; # required for Yubico Authenticator
 
   #################################
   ######### SHELL ALIASES #########
