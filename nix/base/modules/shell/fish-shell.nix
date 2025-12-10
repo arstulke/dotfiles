@@ -43,6 +43,11 @@
       filter_mode = "workspace"
       workspaces = true
     '';
+
+    programs.carapace = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   });
 
   users.defaultUserShell = pkgs.fish;
