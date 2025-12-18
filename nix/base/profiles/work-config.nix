@@ -150,12 +150,13 @@
     };
 
     programs.git = {
-      extraConfig = {
+      settings = {
         commit.gpgsign = true;
         gpg.format = "ssh";
         user.signingkey = "/home/arne/.ssh/id_ed25519.pub";
+        
+        user.email = lib.mkForce "41028207+arstulke-btc@users.noreply.github.com";
       };
-      userEmail = lib.mkForce "41028207+arstulke-btc@users.noreply.github.com";
     };
 
     dconf.settings = {
@@ -164,7 +165,7 @@
           "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop"     # Microsoft Teams PWA
           "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop"     # Microsoft Outlook PWA
           "org.keepassxc.KeePassXC.desktop"
-          "com.yubico.authenticator.desktop"
+          "com.yubico.yubioath.desktop"
           "google-chrome.desktop"
           "chrome-eejcciocfhhpepllfdanigebammgampf-Profile_5.desktop"   # Employee Self Service
           "chrome-fmpnliohjhemenmnlpbfagaolkdacoja-Default.desktop"     # Antrophic Claude

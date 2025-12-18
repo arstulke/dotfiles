@@ -152,7 +152,7 @@
       "org/gnome/shell" = {
         favorite-apps = [
           "org.keepassxc.KeePassXC.desktop"
-          "com.yubico.authenticator.desktop"
+          "com.yubico.yubioath.desktop"
           "google-chrome.desktop"
           "discord.desktop"
           "steam.desktop"

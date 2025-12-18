@@ -101,7 +101,7 @@ Steps:
     cp -f /etc/nixos/hardware-configuration.nix /etc/dotfiles/nix/devices/<<DEVICE>>/
 
     # prefetch displaylink driver
-    nix-prefetch-url --name displaylink-580.zip https://www.synaptics.com/sites/default/files/exe_files/2023-08/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu5.8-EXE.zip
+    nix-prefetch-url --name displaylink-620.zip https://www.synaptics.com/sites/default/files/exe_files/2025-09/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu6.2-EXE.zip
 
     # rebuild nixos from flake config
     nixos-rebuild switch --flake /etc/dotfiles/nix#<<DEVICE>>
