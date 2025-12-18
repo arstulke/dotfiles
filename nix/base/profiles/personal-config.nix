@@ -140,13 +140,16 @@
       "markdown.preview.fontSize" = 20;
     };
 
-    home.file.".config/gtk-3.0/bookmarks".text = ''
-      file:///etc/dotfiles dotfiles
-      file:///home/arne/Downloads Downloads
-      file:///home/arne/Pictures Pictures
-      file:///home/arne/Videos Videos
-      file:///home/arne/Desktop/projects projects
-    '';
+    home.file.".config/gtk-3.0/bookmarks" = {
+      force = true;
+      text = ''
+        file:///etc/dotfiles dotfiles
+        file:///home/arne/Downloads Downloads
+        file:///home/arne/Pictures Pictures
+        file:///home/arne/Videos Videos
+        file:///home/arne/Desktop/projects projects
+      '';
+    };
 
     dconf.settings = {
       "org/gnome/shell" = {
