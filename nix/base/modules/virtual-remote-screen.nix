@@ -32,14 +32,17 @@
     applications.apps = [
       {
         name = "Desktop";
-        # exclude-global-prep-cmd = "false";
-        # auto-detach = "true";
+        image-path = "desktop.png";
       }
       {
         name = "Steam";
-        prep-cmd = "setsid steam steam://close/bigpicture";
-        cmd = "setsid steam steam://open/bigpicture";
-        image = "steam.png";
+        prep-cmd = [
+          {
+            undo = "sudo -u arne ${pkgs.util-linux}/bin/setsid ${pkgs.steam}/bin/steam steam://close/bigpicture";
+          }
+        ];
+        detached = ["sudo -u arne ${pkgs.util-linux}/bin/setsid ${pkgs.steam}/bin/steam steam://open/bigpicture"];
+        image-path = "steam.png";
       }
     ];
   };
