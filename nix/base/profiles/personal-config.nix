@@ -117,9 +117,8 @@
     ];
   };
 
-  programs.obs-studio = {
-    enable = true;
-  };
+  programs.obs-studio.enable = true;  # enable Open Broadcast Software
+  hardware.xpadneo.enable = true;     # enable Xbox One Wireless Controller via Bluetooth
 
   #################################
   ######### SHELL ALIASES #########
