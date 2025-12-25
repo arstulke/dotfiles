@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-    # gnome-remote-desktop # stream desktop to raspberry pi
+    inputs.displayconfig-mutter.packages.${pkgs.system}.default # configuring display resolution via cli
     linuxPackages.usbip # bind remote usb device from raspberry pi
   ];
 
@@ -16,6 +16,13 @@
     openFirewall = true;
 
     settings = {
+      # general
+      global_prep_cmd = builtins.toJSON [
+        {
+          do = "sh -c \"displayconfig-mutter set --connector DP-3 --resolution \${SUNSHINE_CLIENT_WIDTH}x\${SUNSHINE_CLIENT_HEIGHT} --refresh-rate \${SUNSHINE_CLIENT_FPS} --hdr false\"";
+          undo = "displayconfig-mutter set --connector DP-3 --resolution 1920x1080 --refresh-rate 60 --hdr false";
+        }
+      ];
       # audio/video
       output_name = 1;
       # network
