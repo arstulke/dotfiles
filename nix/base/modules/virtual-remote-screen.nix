@@ -16,12 +16,7 @@
     openFirewall = true;
 
     settings = {
-      # input
-      controller = "disabled";
-      keyboard = "disabled";
-      mouse = "disabled";
       # audio/video
-      stream_audio = "disabled";
       output_name = 1;
       # network
       origin_web_ui_allowed = "pc";
@@ -32,6 +27,12 @@
         name = "Desktop";
         # exclude-global-prep-cmd = "false";
         # auto-detach = "true";
+      }
+      {
+        name = "Steam";
+        prep-cmd = "setsid steam steam://close/bigpicture";
+        cmd = "setsid steam steam://open/bigpicture";
+        image = "steam.png";
       }
     ];
   };
