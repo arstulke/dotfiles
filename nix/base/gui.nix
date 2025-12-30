@@ -197,12 +197,14 @@
         command = "nautilus ./Downloads";
         binding = "<Super>e";
       };
-      # TODO fix flameshot
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-flameshot" = {
-        name = "Open flameshot (screenshot tool)";
-        command = "flameshot gui";
-        binding = "<Primary><Shift><Alt>section";
-      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-flameshot" = 
+        let
+          flameshot-gui = pkgs.writeShellScriptBin "flameshot-gui" "${pkgs.flameshot}/bin/flameshot gui";
+        in {
+          name = "Open flameshot (screenshot tool)";
+          command = "${flameshot-gui}/bin/flameshot-gui";
+          binding = "<Primary><Shift><Alt>section";
+        };
     };
 
     xdg.userDirs = {
