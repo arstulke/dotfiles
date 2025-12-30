@@ -98,7 +98,7 @@
   services.pcscd.enable = true; # required for Yubico Authenticator
 
   services.ollama = {
-    enable = true;
+    enable = false;
     acceleration = "cuda";
     environmentVariables = {
       OLLAMA_NUM_PARALLEL = "2";
