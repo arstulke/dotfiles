@@ -24,7 +24,8 @@ in {
         };
 
         services = {
-          firewall.matter.enable = true;
+          firewall.matter.enable = mkDefault true;
+          nocodb.enable = mkDefault true;
         };
     };
 }

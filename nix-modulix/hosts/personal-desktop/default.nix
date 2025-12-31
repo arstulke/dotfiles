@@ -6,6 +6,8 @@
       bundles.personal-workstation.enable = true;
       bundles.gaming.enable = true;
 
+      hardware.usbip-webcam-consumer.enable = true;
+
       desktop.gnome.dock.favorite-apps = [
         "org.keepassxc.KeePassXC.desktop"
         "com.yubico.yubioath.desktop"
