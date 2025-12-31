@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -39,8 +39,8 @@
 
   programs.fish.shellAbbrs = {
     cdconfig = "cd /etc/dotfiles";
-    cddownloads = "cd /home/arne/Downloads";
-    cdprojects = "cd /home/arne/Desktop/projects";
+    cddownloads = "cd /home/${username}/Downloads";
+    cdprojects = "cd /home/${username}/Desktop/projects";
     edit-config = "code /etc/dotfiles"; # TODO generalize for CLI only and for GUI (maybe define global alias for opening editor)
   };
 }

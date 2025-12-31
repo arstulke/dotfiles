@@ -53,30 +53,12 @@
   ########## HOME-MANAGER #########
   #################################
   home-manager.users.arne = {
-    home.file.".config/gtk-3.0/bookmarks" = {
-      force = true;
-      text = ''
-        file:///etc/dotfiles dotfiles
-        file:///home/arne/Downloads Downloads
-        file:///home/arne/Pictures Pictures
-        file:///home/arne/Videos Videos
-        file:///home/arne/Desktop/projects projects
-      '';
-    };
-
     dconf.settings = {
       "org/gnome/shell" = {
         favorite-apps = [
-          "org.keepassxc.KeePassXC.desktop"
-          "com.yubico.yubioath.desktop"
-          "google-chrome.desktop"
           "discord.desktop"
           "steam.desktop"
-          "code.desktop"
           "webstorm.desktop"
-          "sublime_merge.desktop"
-          "org.gnome.Nautilus.desktop"
-          "org.gnome.Console.desktop"
         ];
       };
     };

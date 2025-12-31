@@ -1,4 +1,4 @@
-{lib, ...}: {
+{lib, pkgs, ...}: {
     programs.fish = {
         enable = true;
         interactiveShellInit = /*fish*/''
@@ -7,4 +7,6 @@
     };
 
     hm.xdg.configFile."fish/extraConfig.fish" = lib.mkSymlink ./config.fish;
+
+    users.defaultUserShell = pkgs.fish;
 }

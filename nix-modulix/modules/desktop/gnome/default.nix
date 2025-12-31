@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  #################################
-  ###### PROGRAMS / SERVICES ######
-  #################################
-
   # Enable the X11 windowing system.
   services.xserver.enable = true; # TODO Do I still need this?
 

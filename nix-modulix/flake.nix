@@ -36,7 +36,13 @@
             specialArgs = {
                 hostname = "nixos";
                 username = "arne";
+                gitCreds.name = "Arne Stulken";
+                gitCreds.email = "21034491+arstulke@users.noreply.github.com";
+            };
+            sharedConfig = {
+                modules.bundles.shared.enable = true;
             };
         };
+        overlays = import ./overlays.nix inputs;
     };
 }

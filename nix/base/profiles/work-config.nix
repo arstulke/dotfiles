@@ -59,11 +59,7 @@
     home.file.".config/gtk-3.0/bookmarks" = {
       force = true;
       text = ''
-        file:///etc/dotfiles dotfiles
-        file:///home/arne/Downloads Downloads
-        file:///home/arne/Pictures Pictures
         file:///home/arne/Desktop/notes notes
-        file:///home/arne/Desktop/projects projects
       '';
     };
 
@@ -106,18 +102,10 @@
         favorite-apps = [
           "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop"     # Microsoft Teams PWA
           "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop"     # Microsoft Outlook PWA
-          "org.keepassxc.KeePassXC.desktop"
-          "com.yubico.yubioath.desktop"
-          "google-chrome.desktop"
           "chrome-eejcciocfhhpepllfdanigebammgampf-Profile_5.desktop"   # Employee Self Service
           "chrome-fmpnliohjhemenmnlpbfagaolkdacoja-Default.desktop"     # Antrophic Claude
-          "discord.desktop"
-          "code.desktop"
           "idea-ultimate.desktop"
-          "sublime_merge.desktop"
-          "org.gnome.Nautilus.desktop"
           "Logseq.desktop"
-          "org.gnome.Console.desktop"
         ];
       };
     };
