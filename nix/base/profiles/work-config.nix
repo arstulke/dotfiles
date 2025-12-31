@@ -16,9 +16,6 @@
   # List GUI packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Jetbrains
-    jetbrains.idea-ultimate
-
     # VS Code
     (vscode-with-extensions.override {
       vscodeExtensions = let
@@ -35,22 +32,6 @@
           open-vsx-release
         ]);
       [
-        # general
-        k--kato.intellij-idea-keybindings
-        axelrindle.duplicate-file
-        ms-azuretools.vscode-docker
-        ms-vscode-remote.remote-ssh
-
-        # mermaid
-        bierner.markdown-mermaid
-
-        # nix
-        bbenoist.nix
-        mkhl.direnv
-
-        # remote workspaces
-        ms-vscode-remote.remote-containers
-
         # python
         ms-toolsai.jupyter
         ms-python.vscode-pylance
@@ -60,55 +41,13 @@
         amazonwebservices.aws-toolkit-vscode
       ];
     })
-
-    # VSC
-    gh
-    github-desktop
-
-    # AWS stuff
-    unstable.awscli2
-    ssm-session-manager-plugin
-
-    # Kubernetes stuff
-    kubectl
-    kubernetes-helm
-    (wrapHelm kubernetes-helm {
-      plugins = with pkgs.kubernetes-helmPlugins; [
-        helm-diff
-      ];
-    })
-    k9s
-
-    # Javascript stuff
-    nodejs_22
-    yarn
-
-    # other
-    openvpn
   ];
-
-  #################################
-  ###### PROGRAMS / SERVICES ######
-  #################################
-  services.pcscd.enable = true; # required for Yubico Authenticator
-
-  #################################
-  ######### SHELL ALIASES #########
-  #################################
-  programs.fish.shellAbbrs = {
-    edit-aws = "code ~/.aws/";
-  };
 
   #################################
   ########## HOME-MANAGER #########
   #################################
   home-manager.users.arne = {
     home.file.".config/Code/User/settings.json".text = builtins.toJSON {
-      "editor.wordWrap" = "on";
-      "editor.fontSize" = 14;
-      "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
-      "terminal.integrated.fontSize" = 14;
-      
       # Settings for AWS Toolkit & Sagemaker Remote access
       "aws.telemetry" = false;
       "remote.SSH.connectTimeout" = 120;
