@@ -1,15 +1,21 @@
+{ config, pkgs, lib, ... }:
+
 {
-    gitCredentials,
-    pkgs,
-    ...
-}: {
+    options.git.username = lib.mkOption {
+      type = lib.types.str;
+      description = "Global Git username";
+    };
+    options.git.email = lib.mkOption {
+      type = lib.types.str;
+      description = "Global Git email";
+    };
+
     hm.programs.git = {
-        inherit (gitCredentials) userEmail userName;
         enable = true;
         settings = {
             user = {
-                name = "${secrets.git_credentials.username}";
-                email = "${secrets.git_credentials.email}";
+                name = config.git.username;
+                email = config.git.email;
 
                 init.defaultBranch = "main";
                 credential.helper = "store";

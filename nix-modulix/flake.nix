@@ -36,11 +36,6 @@
             specialArgs = {
                 hostname = "nixos";
                 username = "arne";
-                isThinClient = false;
-            };
-            sharedConfig = {hostname, ...}: {
-                modules.home-manager.enable = true;
-                networking.hostName = hostname;
             };
         };
     };
