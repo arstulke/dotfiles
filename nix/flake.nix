@@ -30,7 +30,7 @@
     outputs = inputs: {
         nixosConfigurations = inputs.modulix.lib.mkHosts {
             inherit inputs;
-            flakePath = "/etc/dotfiles/nix-modulix";
+            flakePath = "/etc/dotfiles/nix";
             modulesPath = ./modules;
             helpers = import ./lib;
             specialArgs = {
