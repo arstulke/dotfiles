@@ -13,10 +13,12 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "hm-backup";
-        users.${username}.home = {
-            inherit username;
-            homeDirectory = "/home/${username}";
+        users.${username} = {
             programs.home-manager.enable = true;
+            home = {
+                inherit username;
+                homeDirectory = "/home/${username}";
+            };
         };
     };
 }
