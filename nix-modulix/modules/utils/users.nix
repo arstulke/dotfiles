@@ -3,12 +3,9 @@
     lib,
     ...
 }: {
-    users.users.${username} =
-        {
-            isNormalUser = true;
-            extraGroups = [
-                "wheel"
-                "networkmanager"
-            ];
-        };
+    users.users.${username} = {
+        initialPassword = "1qay!QAY";
+        isNormalUser = true;
+        extraGroups = [ "networkmanager" "wheel" ];
+    };
 }
