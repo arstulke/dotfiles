@@ -1,7 +1,7 @@
 { lib, username, ... }:
 
 {
-    options.gnome.file-manager.bookmarks = lib.mkOption {
+    options.file-manager.bookmarks = lib.mkOption {
         type = lib.types.listOf lib.types.str;
         description = "Bookmarks in Gnome file manager";
         default = [
@@ -16,7 +16,7 @@
     config = cfg: {
         hm.home.file.".config/gtk-3.0/bookmarks" = {
             force = true;
-            text = builtins.concatStringsSep "\n" cfg.gnome.file-manager.bookmarks;
+            text = builtins.concatStringsSep "\n" cfg.file-manager.bookmarks;
         };
     };
 }

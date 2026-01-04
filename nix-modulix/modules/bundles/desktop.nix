@@ -6,10 +6,6 @@
 }: let
     inherit (lib) mkDefault;
 in {
-    environment = {
-        variables.NIX_FLAKE_DEFAULT_HOST = internalName;
-    };
-
     modules = {
         desktop = {
             gnome.enable = mkDefault true;

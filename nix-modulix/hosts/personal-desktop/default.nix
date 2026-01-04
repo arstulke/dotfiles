@@ -3,7 +3,7 @@
 {
     modules = {
       bundles.desktop.enable = true;
-      bundles.personal-workstation.enable = true;
+      bundles.personal-base.enable = true;
       bundles.gaming.enable = true;
 
       hardware.usbip-webcam-consumer.enable = true;

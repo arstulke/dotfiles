@@ -19,6 +19,14 @@ let
         # remote workspaces
         ms-vscode-remote.remote-containers
     ];
+
+    defaultSettings = {
+        "editor.wordWrap" = "on";
+        "editor.fontSize" = 14;
+        "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
+        "terminal.integrated.fontSize" = 14;
+        "markdown.preview.fontSize" = 20;
+    };
 in
 {
     options.default-extensions.enable = lib.mkOption {
@@ -37,6 +45,11 @@ in
         '';
         description = "List of VS Code extensions to install.";
     };
+    options.settings = lib.mkOption {
+        type = lib.types.attrsOf lib.types.anything;
+        default = {};
+        description = "VS Code settings to merge with defaults.";
+    };
 
     config = cfg: {
         environment.systemPackages = with pkgs; [
@@ -47,12 +60,6 @@ in
             })
         ];
 
-        hm.home.file.".config/Code/User/settings.json".text = builtins.toJSON {
-            "editor.wordWrap" = "on";
-            "editor.fontSize" = 14;
-            "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace";
-            "terminal.integrated.fontSize" = 14;
-            "markdown.preview.fontSize" = 20;
-        };
+        hm.home.file.".config/Code/User/settings.json".text = builtins.toJSON (lib.recursiveUpdate defaultSettings cfg.settings);
     };
 }

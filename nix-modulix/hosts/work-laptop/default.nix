@@ -3,24 +3,28 @@
 {
     modules = {
       bundles.desktop.enable = true;
-      bundles.personal-base.enable = true;
-      bundles.gaming.enable = true;
-
-      hardware.usbip-webcam-consumer.enable = true;
+      bundles.work-base.enable = true;
 
       desktop.gnome.dock.favorite-apps = [
+        "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop"     # Microsoft Teams PWA
+        "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop"     # Microsoft Outlook PWA
         "org.keepassxc.KeePassXC.desktop"
         "com.yubico.yubioath.desktop"
         "google-chrome.desktop"
-        "discord.desktop"
-        "steam.desktop"
+        "chrome-eejcciocfhhpepllfdanigebammgampf-Profile_5.desktop"   # Employee Self Service
+        "chrome-fmpnliohjhemenmnlpbfagaolkdacoja-Default.desktop"     # Antrophic Claude
         "code.desktop"
-        "webstorm.desktop"
+        "idea-ultimate.desktop"
         "sublime_merge.desktop"
         "org.gnome.Nautilus.desktop"
+        "Logseq.desktop"
         "org.gnome.Console.desktop"
       ];
     };
+
+    # Add graphics driver
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    services.xserver.videoDrivers = [ "amdgpu" "displaylink" "modesetting" ];
 
     # Bootloader
     boot.loader = {
