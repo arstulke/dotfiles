@@ -21,6 +21,20 @@ in {
             quick-share.enable = mkDefault true;
             rpi-imager.enable = mkDefault true;
             spotify.enable = mkDefault true;
+
+            vscode.extensions = with pkgs.my-vscode-extension-sets; [
+                # remote workspaces
+                github.copilot
+                github.codespaces
+
+                # python
+                ms-toolsai.jupyter
+                ms-python.vscode-pylance
+                ms-python.python
+
+                # typescript
+                denoland.vscode-deno
+            ];
         };
 
         services = {
