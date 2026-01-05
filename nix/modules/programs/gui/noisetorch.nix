@@ -13,11 +13,6 @@
     jack.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    pavucontrol
-    helvum
-  ];
-
   systemd.user.services.noisetorch = {
     enable = true;
     description = "Start NoiseTorch at login";
