@@ -21,6 +21,10 @@
       inputs.nixpkgs.follows = "nixpkgs-openaws-vpn-client";
     };
 
+    haumea = {
+      url = "github:nix-community/haumea/v0.2.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     modulix = {
       url = "github:anders130/modulix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,6 +65,6 @@
           modules.bundles."10-shared".enable = true;
         };
       };
-      overlays = import ./overlays.nix inputs;
+      overlays = import ./overlays inputs;
     };
 }
