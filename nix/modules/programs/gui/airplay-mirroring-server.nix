@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-
-{
-  environment.systemPackages = with pkgs; [ uxplay ];
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [uxplay];
 
   services.avahi = {
     nssmdns4 = true;

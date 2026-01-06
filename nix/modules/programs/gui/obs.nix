@@ -1,5 +1,7 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.obs-studio.enable = true;
 }

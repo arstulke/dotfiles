@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ sublime-merge ];
+  config,
+  pkgs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [sublime-merge];
 }

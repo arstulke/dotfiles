@@ -1,7 +1,9 @@
-{ pkgs, username, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ rquickshare ];
+  pkgs,
+  username,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [rquickshare];
 
   networking.firewall = {
     allowedTCPPorts = [12345];

@@ -1,5 +1,8 @@
-{ pkgs, lib, inputs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ openvpn ];
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [openvpn];
 }

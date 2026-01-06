@@ -1,5 +1,7 @@
-{ pkgs, inputs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ unstable.jetbrains.webstorm ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [unstable.jetbrains.webstorm];
 }

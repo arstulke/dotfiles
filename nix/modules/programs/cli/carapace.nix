@@ -1,8 +1,10 @@
-{ pkgs, lib, ... }:
-
 {
-    hm.programs.carapace = {
-        enable = true;
-        enableFishIntegration = true;
-    };
+  pkgs,
+  lib,
+  ...
+}: {
+  hm.programs.carapace = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }

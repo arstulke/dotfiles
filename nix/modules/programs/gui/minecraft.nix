@@ -1,5 +1,7 @@
-{ pkgs, inputs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ prismlauncher ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [prismlauncher];
 }

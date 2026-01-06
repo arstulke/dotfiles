@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ podman-compose ];
+  config,
+  pkgs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [podman-compose];
 
   virtualisation = {
     oci-containers.backend = "podman";

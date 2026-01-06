@@ -1,6 +1,9 @@
-{ pkgs, lib, inputs, ... }:
-
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   options.prepVsCode = lib.mkOption {
     type = lib.types.bool;
     description = "Whether to preparing VS code to use the AWS CLI and session-manager-plugin.";

@@ -1,14 +1,16 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     linuxPackages.usbip # bind remote usb device from raspberry pi
   ];
 
   systemd.services.usbip-attach-remote = {
     description = "Attach remote USB device via usbip";
-    after = [ "network-online.target" ];
-    wants = [ "network-online.target" ];
+    after = ["network-online.target"];
+    wants = ["network-online.target"];
 
     serviceConfig = {
       Type = "oneshot";
@@ -24,6 +26,6 @@
       User = "root";
     };
 
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
   };
 }

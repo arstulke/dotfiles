@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   nix = {
     package = pkgs.nixVersions.stable;
     extraOptions = ''
-        experimental-features = nix-command flakes pipe-operators
+      experimental-features = nix-command flakes pipe-operators
     '';
   };
 }

@@ -1,4 +1,4 @@
 {
-    hostname = "arne-desktop";
-    username = "arne";
+  hostname = "arne-desktop";
+  username = "arne";
 }

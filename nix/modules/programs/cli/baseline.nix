@@ -1,13 +1,10 @@
 {
   username,
   flakePath,
-
   config,
   pkgs,
   ...
-}:
-
-{
+}: {
   environment.systemPackages = with pkgs; [
     # general
     git
@@ -16,7 +13,7 @@
     unzip
     vim
     nano
-    jq  # format json
+    jq # format json
     exiftool
 
     # network

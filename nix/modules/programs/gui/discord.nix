@@ -1,5 +1,7 @@
-{ pkgs, inputs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ discord ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [discord];
 }

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   console.keyMap = "de";
   time.timeZone = "Europe/Berlin";
 

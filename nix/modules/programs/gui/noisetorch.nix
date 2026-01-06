@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.noisetorch.enable = true;
 
   security.rtkit.enable = true;

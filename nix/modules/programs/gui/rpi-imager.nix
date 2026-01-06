@@ -1,5 +1,7 @@
-{ pkgs, inputs, ... }:
-
 {
-  environment.systemPackages = with pkgs; [ rpi-imager ];
+  pkgs,
+  inputs,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [rpi-imager];
 }
