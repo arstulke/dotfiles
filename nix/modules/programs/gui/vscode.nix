@@ -4,6 +4,8 @@
   inputs,
   ...
 }: let
+  inherit (lib) mkDefault;
+
   defaultExtensions = with pkgs.my-vscode-extension-sets; [
     # general
     k--kato.intellij-idea-keybindings
@@ -54,6 +56,10 @@ in {
   };
 
   config = cfg: {
+    modules = {
+      programs.cli.baseline.editor = mkDefault "code --new-window";
+    };
+
     environment.systemPackages = with pkgs; [
       (vscode-with-extensions.override {
         vscodeExtensions =

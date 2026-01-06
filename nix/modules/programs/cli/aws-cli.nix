@@ -17,7 +17,7 @@
     ];
 
     programs.fish.shellAbbrs = {
-      edit-aws = "code ~/.aws/"; # TODO generalize for CLI only and for GUI (maybe define global alias for opening editor)
+      edit-aws = "edit ~/.aws/";
     };
 
     # define symlink in settings of VS code extension "amazonwebservices.aws-toolkit-vscode" to sessionmanagerplugin binary

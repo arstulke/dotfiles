@@ -26,8 +26,8 @@
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-edit-config" = {
-      name = "Edit dotfile config";
-      command = "code /etc/dotfiles/nix"; # TODO generalize for CLI only and for GUI (maybe define global alias for opening editor)
+      name = "Edit dotfiles config";
+      command = "code --new-window /etc/dotfiles/nix";
       binding = "<Super>c";
     };
 
