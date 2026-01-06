@@ -1,8 +1,15 @@
 {
+  username,
   config,
   pkgs,
+  inputs,
   ...
 }: {
+  environment.systemPackages = with pkgs; [
+    # configuring display resolution via cli
+    inputs.displayconfig-mutter.packages.${pkgs.system}.default
+  ];
+
   services.sunshine = {
     enable = true;
     autoStart = true;
@@ -10,13 +17,17 @@
     openFirewall = true;
 
     settings = {
-      # input
-      controller = "disabled";
-      keyboard = "disabled";
-      mouse = "disabled";
+      # general
+      global_prep_cmd = builtins.toJSON [
+        {
+          do = "sh -c \"displayconfig-mutter set --connector DP-3 --resolution \${SUNSHINE_CLIENT_WIDTH}x\${SUNSHINE_CLIENT_HEIGHT} --refresh-rate \${SUNSHINE_CLIENT_FPS} --hdr false\"";
+          undo = "displayconfig-mutter set --connector DP-3 --resolution 1920x1080 --refresh-rate 60 --hdr false";
+        }
+      ];
+
       # audio/video
-      stream_audio = "disabled";
       output_name = 1;
+
       # network
       origin_web_ui_allowed = "pc";
     };
@@ -24,13 +35,21 @@
     applications.apps = [
       {
         name = "Desktop";
-        # exclude-global-prep-cmd = "false";
-        # auto-detach = "true";
+        image-path = "desktop.png";
+      }
+      {
+        name = "Steam";
+        prep-cmd = [
+          {
+            undo = "sudo -u ${username} ${pkgs.util-linux}/bin/setsid ${pkgs.steam}/bin/steam steam://close/bigpicture";
+          }
+        ];
+        detached = ["sudo -u ${username} ${pkgs.util-linux}/bin/setsid ${pkgs.steam}/bin/steam steam://open/bigpicture"];
+        image-path = "steam.png";
       }
     ];
   };
 
-  # TODO Do I still need this?
   hm.dconf.settings = {
     "org/gnome/mutter" = {
       experimental-features = ["scale-monitor-framebuffer" "xwayland-native-scaling" "variable-refresh-rate" "monitor-config-manager"];
