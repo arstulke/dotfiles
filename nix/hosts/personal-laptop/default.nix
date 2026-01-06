@@ -44,15 +44,6 @@
     }
   ];
 
-  # TODO delete later if not needed
-  programs.nix-ld = {
-    enable = true;
-    #        dev.enable = false;
-    libraries = with pkgs; [
-      # Add here any missing dynamic libraries for unpackaged programs
-    ];
-  };
-
   # NixOS & Home-Manager state
   system.stateVersion = "25.11";
   hm.home.stateVersion = "25.11";

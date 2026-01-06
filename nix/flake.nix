@@ -12,10 +12,6 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nix-ld = {
-      url = "github:nix-community/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     displayconfig-mutter.url = "github:eaglesemanation/displayconfig-mutter";
 
