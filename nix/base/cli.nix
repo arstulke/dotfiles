@@ -160,12 +160,14 @@
     # custom config
     programs.git = {
       enable = true;
-      settings.user = {
+      settings = {
         init.defaultBranch = "main";
         credential.helper = "store";
 
-        name = "Arne Stulken";
-        email = "21034491+arstulke@users.noreply.github.com";
+        user = {
+          name = "Arne Stulken";
+          email = "21034491+arstulke@users.noreply.github.com";
+        };
       };
     };
   };
