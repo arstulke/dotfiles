@@ -17,7 +17,7 @@ in {
       discord.enable = mkDefault true;
       obs.enable = mkDefault true;
       quick-share.enable = mkDefault true;
-      rpi-imager.enable = mkDefault true;
+      disk-writer.enable = mkDefault true;
       spotify.enable = mkDefault true;
 
       vscode.extensions = with pkgs.my-vscode-extension-sets; [
