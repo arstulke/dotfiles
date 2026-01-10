@@ -61,6 +61,9 @@
     timeout = 5;
   };
 
+  # Emulate ARM CPU (required for cross-compiling RPi SD card image)
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   # Time
   time.hardwareClockInLocalTime = true; # using local time (required for dual boot with Windows because it stores the local time)
 

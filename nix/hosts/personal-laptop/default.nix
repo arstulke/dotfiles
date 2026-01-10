@@ -36,6 +36,9 @@
     };
   };
 
+  # Emulate ARM CPU (required for cross-compiling RPi SD card image)
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   # Swapfile
   swapDevices = [
     {

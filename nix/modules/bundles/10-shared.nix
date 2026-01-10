@@ -31,6 +31,7 @@ in {
       home-manager.enable = mkDefault true;
       lifecycle.enable = mkDefault true;
       locale.enable = mkDefault true;
+      man.enable = mkDefault true;
       networking.enable = mkDefault true;
       nix.enable = mkDefault true;
       nixpkgs.enable = mkDefault true;

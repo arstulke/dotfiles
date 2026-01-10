@@ -14,9 +14,11 @@
 
   config = cfg: {
     environment.systemPackages = with pkgs; [
-      # general
+      # basics
       git
       bash
+
+      # file handing
       zip
       unzip
       vim
@@ -39,6 +41,9 @@
       btop
       usbutils
       xsensors
+
+      # nix
+      cachix
     ];
 
     environment.variables = {EDITOR = cfg.editor;};
