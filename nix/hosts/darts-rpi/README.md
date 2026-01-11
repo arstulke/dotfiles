@@ -29,5 +29,5 @@ To install NixOS on this machine, follow these steps:
 3. **Setup internet connection (optional)**
 
    ```
-   wifi-connect [-h/--hidden] <SSID>
+   wifi-connect <SSID> [-h/--hidden]
    ```
