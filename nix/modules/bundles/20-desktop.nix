@@ -10,6 +10,9 @@ in {
     bundles."10-shared".enable = true;
 
     desktop.gnome.enable = mkDefault true;
+    programs.cli = {
+      oh-my-posh.profile = "gui";
+    };
     programs.gui = {
       baseline.enable = mkDefault true;
       noisetorch.enable = mkDefault true;

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background_templates": [
+            "{{if .Root }}#EF4444{{else}}#0077C2{{end}}"
+          ],
+          "foreground": "#FFFFFF",
+          "style": "diamond",
+          "template": " {{ if .SSHSession }}ssh{{end}} {{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#FB923C",
+          "foreground": "#111827",
+          "style": "plain",
+          "template": " {{ .Location }} ",
+          "type": "path"
+        },
+        {
+          "background": "#22C55E",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FDE047{{ end }}",
+            "{{ if gt .Ahead 0 }}#C084FC{{ end }}",
+            "{{ if gt .Behind 0 }}#C084FC{{ end }}"
+          ],
+          "foreground": "#030712",
+          "properties": {
+            "branch_icon": "",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} unstaged {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}<#ef5350> staging {{ .Staging.String }}</>{{ end }} ",
+          "type": "git"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#6DACD9",
+          "style": "plain",
+          "template": " {{ if eq .Type \"unknown\" }}NixOS{{ else }}nix-shell{{ end }}",
+          "type": "nix-shell"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#565656",
+          "foreground": "#FAA029",
+          "style": "plain",
+          "template": " {{.Profile}}{{if .Region}}@{{.Region}}{{end}} ",
+          "type": "aws"
+        },
+        {
+          "background": "#38BDF8",
+          "foreground": "#030712",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "plain",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground_templates": [
+            "{{if .Root }}#EF4444{{else}}#0077C2{{end}}"
+          ],
+          "style": "plain",
+          "template": "\u2514\u2500",
+          "type": "text"
+        },
+        {
+          "foreground": "#FFFFFF",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "> ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{.Location}}{{if .Root}} :: root{{end}} :: {{.Shell}}",
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FFFFFF",
+    "template": "{{ .UserName }}@{{ .HostName }}:{{ .Segments.Path.Location }} > "
+  },
+  "version": 3
+}
