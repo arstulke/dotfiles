@@ -5,7 +5,7 @@
       audio.enable = false; # disabling audio because it is not required and maybe it reduces image size (enabled in "10-shared" by default)
       raspberry-pi.enable = true;
     };
-    # TODO serve autodarts
+    services.autodarts.enable = true;
     # TODO serve webcam via usbip
   };
 
