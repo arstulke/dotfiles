@@ -46,6 +46,7 @@
 
       # nix
       cachix
+      agenix
     ];
 
     environment.variables = {

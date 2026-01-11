@@ -1,4 +1,0 @@
-[
-  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJg+GUBJMuJiNJeEMiNdqNXyKHjf4IoBTv+oCJF8QJbL arne@arne-desktop"
-  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAsQKnt/wHeRjRSZOh1Y3r2Kif362My/xA+KHI5s9ShL arne@arne-ideapad"
-]

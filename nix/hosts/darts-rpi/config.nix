@@ -5,5 +5,6 @@ inputs: {
   modules = [
     ../../modules/hardware/raspberry-pi/_nixosSystemModule.nix
     inputs.nixos-raspberrypi.nixosModules.raspberry-pi-4.base
+    inputs.agenix.nixosModules.default
   ];
 }

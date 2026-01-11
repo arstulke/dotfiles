@@ -17,8 +17,6 @@
       "org.gnome.Nautilus.desktop"
       "org.gnome.Console.desktop"
     ];
-
-    # hardware.usbip-webcam-consumer.enable = true; # TODO enable after installing darts-rpi
   };
 
   # Bootloader
