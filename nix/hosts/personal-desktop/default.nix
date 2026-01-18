@@ -25,6 +25,30 @@
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.open = false; # opensource drivers only supported for Turing or later GPUs (RTX series, GTX 16xx)
 
+  # Custom WirePlumber configuration
+  environment.etc."wireplumber/wireplumber.conf.d/98-disable-devices.conf".text = ''
+    monitor.alsa.rules = [
+      {
+        matches = [
+          {
+            device.name = "alsa_card.pci-0000_01_00.1"
+          }
+          {
+            device.name = "alsa_card.usb-SunplusIT_Inc_FHD_Camera_Microphone_01.00.00-02"
+          }
+          {
+            device.name = "alsa_card.usb-Vimicro_corp._PC-LM1E_Camera_PC-LM1E_Audio-02"
+          }
+        ]
+        actions = {
+          update-props = {
+            device.disabled = true
+          }
+        }
+      }
+    ]
+  '';
+
   # Bootloader
   # TODO switch to GRUB
   # - current issue: installation of GRUB creates EFI entry in `efibootmgr` but it will be deleted during boot
