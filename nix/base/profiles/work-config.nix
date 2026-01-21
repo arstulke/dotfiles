@@ -83,6 +83,10 @@
     nodejs_22
     yarn
 
+    # AI
+    claude-code
+    claude-monitor
+
     # other
     openvpn
   ];
