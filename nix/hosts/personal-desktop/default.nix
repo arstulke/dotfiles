@@ -4,8 +4,6 @@
     bundles."30-personal-machine".enable = true;
     bundles."40-gaming".enable = true;
 
-    hardware.usbip-webcam-consumer.enable = true;
-
     desktop.gnome.dock.favorite-apps = [
       "org.keepassxc.KeePassXC.desktop"
       "com.yubico.yubioath.desktop"
@@ -18,6 +16,8 @@
       "org.gnome.Nautilus.desktop"
       "org.gnome.Console.desktop"
     ];
+
+    # hardware.usbip-webcam-consumer.enable = true; # TODO enable after installing darts-rpi
   };
 
   # Add graphics driver
