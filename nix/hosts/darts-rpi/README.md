@@ -29,5 +29,5 @@ To install NixOS on this machine, follow these steps:
 3. **Setup internet connection (optional)**
 
    ```
-   nmcli device wifi connect <SSID> password <SSIDPassword>
+   wifi-connect [-h/--hidden] <SSID>
    ```
