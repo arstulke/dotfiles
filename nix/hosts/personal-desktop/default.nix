@@ -77,7 +77,27 @@
 
   # Network
   networking = {
+    # Enable Wake-on-LAN
     interfaces.enp5s0.wakeOnLan.enable = true;
+
+    # VLANs
+    vlans = {
+      enp5s0_10_main = {
+        id = 10;
+        interface = "enp5s0";
+      };
+      enp5s0_30_lab = {
+        id = 30;
+        interface = "enp5s0";
+      };
+      enp5s0_40_iot = {
+        id = 40;
+        interface = "enp5s0";
+      };
+    };
+    interfaces.enp5s0_10_main.useDHCP = true;
+    interfaces.enp5s0_30_lab.useDHCP = true;
+    interfaces.enp5s0_40_iot.useDHCP = true;
   };
 
   # NixOS & Home-Manager state
