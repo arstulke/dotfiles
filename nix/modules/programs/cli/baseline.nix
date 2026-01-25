@@ -35,6 +35,7 @@
       static-web-server # http server
       nmap
       inetutils
+      net-tools
 
       # hardware resources
       htop
