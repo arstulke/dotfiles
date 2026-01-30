@@ -9,6 +9,10 @@ in {
   modules = {
     bundles."20-desktop".enable = true;
 
+    programs.cli = {
+      gemini.enable = mkDefault true;
+    };
+
     programs.gui = {
       jetbrains.webstorm.enable = mkDefault true;
       "3d-printing-design".enable = mkDefault true;
