@@ -33,6 +33,7 @@ in {
       locale.enable = mkDefault true;
       man.enable = mkDefault true;
       networking.enable = mkDefault true;
+      nix-ld.enable = mkDefault true;
       nix.enable = mkDefault true;
       nixpkgs.enable = mkDefault true;
       users.enable = mkDefault true;

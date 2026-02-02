@@ -47,7 +47,9 @@
       cachix
     ];
 
-    environment.variables = {EDITOR = cfg.editor;};
+    environment.variables = {
+      EDITOR = cfg.editor;
+    };
 
     environment.shellAliases = {
       edit = cfg.editor;
