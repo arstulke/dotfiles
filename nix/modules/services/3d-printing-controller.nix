@@ -94,7 +94,7 @@ in {
           homing_speed = 20;
 
           # may be optimized by calibration procedure
-          position_endstop = -3.100;
+          position_endstop = -3.375;
         };
 
         extruder = {
