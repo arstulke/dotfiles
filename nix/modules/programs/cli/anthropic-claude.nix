@@ -5,7 +5,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    claude-code
+    unstable.claude-code
     claude-monitor
   ];
 }
