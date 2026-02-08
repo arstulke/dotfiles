@@ -79,6 +79,7 @@
   networking = {
     # Enable Wake-on-LAN
     interfaces.enp5s0.wakeOnLan.enable = true;
+    firewall.allowedUDPPorts = [9];
 
     # VLANs
     vlans = {
