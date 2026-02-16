@@ -12,7 +12,7 @@
       "chrome-eejcciocfhhpepllfdanigebammgampf-Profile_5.desktop" # Employee Self Service
       "chrome-fmpnliohjhemenmnlpbfagaolkdacoja-Default.desktop" # Antrophic Claude
       "code.desktop"
-      "idea-ultimate.desktop"
+      "idea.desktop"
       "sublime_merge.desktop"
       "org.gnome.Nautilus.desktop"
       "Logseq.desktop"
