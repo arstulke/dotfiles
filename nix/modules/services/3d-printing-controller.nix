@@ -94,7 +94,7 @@ in {
           homing_speed = 20;
 
           # may be optimized by calibration procedure
-          position_endstop = -3.375;
+          position_endstop = -3.775;
         };
 
         extruder = {
@@ -109,26 +109,26 @@ in {
           sensor_type = "ATC Semitec 104GT-2";
           sensor_pin = "PA7";
           min_temp = 0;
-          max_temp = 250;
+          max_temp = 210;
 
-          # may be optimized by calibration procedure
+          # may be optimized by calibration procedure: `PID_CALIBRATE HEATER=extruder TARGET=210`
           control = "pid";
-          pid_kp = 21.727;
-          pid_ki = 0.947;
-          pid_kd = 124.660;
+          pid_kp = 15.450;
+          pid_ki = 0.518;
+          pid_kd = 115.297;
         };
         heater_bed = {
           heater_pin = "PD4";
           sensor_type = "ATC Semitec 104GT-2";
           sensor_pin = "PA6";
           min_temp = 0;
-          max_temp = 130;
+          max_temp = 70;
 
-          # may be optimized by calibration procedure
+          # may be optimized by calibration procedure: `PID_CALIBRATE HEATER=heater_bed TARGET=60`
           control = "pid";
-          pid_kp = 69.898;
-          pid_ki = 1.596;
-          pid_kd = 765.383;
+          pid_kp = 72.174;
+          pid_ki = 1.154;
+          pid_kd = 1128.613;
         };
 
         fan.pin = "PB4";
