@@ -12,9 +12,12 @@ in {
     hardware.xbox-controller.enable = true;
 
     programs.gui = {
-      minecraft.enable = mkDefault true;
-      sunshine.enable = mkDefault true;
-      steam.enable = mkDefault true;
+      gaming = {
+        minecraft.enable = mkDefault true;
+        pokemmo.enable = mkDefault true;
+        sunshine.enable = mkDefault true;
+        steam.enable = mkDefault true;
+      };
     };
   };
 }
