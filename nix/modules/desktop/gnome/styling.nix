@@ -10,6 +10,7 @@
     gnomeExtensions.user-themes
     gnomeExtensions.system-monitor
     gnomeExtensions.clipboard-history
+    gnomeExtensions.color-picker
     yaru-theme
   ];
 
@@ -22,6 +23,7 @@
         pkgs.gnomeExtensions.user-themes.extensionUuid
         pkgs.gnomeExtensions.system-monitor.extensionUuid
         pkgs.gnomeExtensions.clipboard-history.extensionUuid
+        pkgs.gnomeExtensions.color-picker.extensionUuid
       ];
     };
     "org/gnome/desktop/interface" = {
