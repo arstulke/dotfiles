@@ -109,7 +109,7 @@ in {
           sensor_type = "ATC Semitec 104GT-2";
           sensor_pin = "PA7";
           min_temp = 0;
-          max_temp = 210;
+          max_temp = 230;
 
           # may be optimized by calibration procedure: `PID_CALIBRATE HEATER=extruder TARGET=210`
           control = "pid";
@@ -122,7 +122,7 @@ in {
           sensor_type = "ATC Semitec 104GT-2";
           sensor_pin = "PA6";
           min_temp = 0;
-          max_temp = 70;
+          max_temp = 80;
 
           # may be optimized by calibration procedure: `PID_CALIBRATE HEATER=heater_bed TARGET=60`
           control = "pid";
