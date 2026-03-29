@@ -28,7 +28,7 @@
       mkdir -p ${cfg.configDir}
     '';
 
-    virtualisation.oci-containers.containers.autodarts = {
+    virtualisation.oci-containers.containers."autodarts" = {
       image = "docker.io/michvllni/autodarts:${cfg.version}";
       autoStart = true;
 
