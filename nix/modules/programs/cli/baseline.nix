@@ -42,6 +42,7 @@
       btop
       usbutils
       xsensors
+      ncdu
 
       # nix
       cachix
