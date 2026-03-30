@@ -13,6 +13,7 @@
     ms-azuretools.vscode-docker
     ms-vscode-remote.remote-ssh
     ms-vscode.hexeditor
+    activitywatch.aw-watcher-vscode
 
     # mermaid
     bierner.markdown-mermaid

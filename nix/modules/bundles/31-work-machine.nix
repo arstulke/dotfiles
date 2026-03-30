@@ -33,6 +33,7 @@ in {
       k8s.enable = true;
       logseq.enable = true;
       openaws-vpn-client.enable = true;
+      activitywatch.enable = true;
 
       vscode.extensions = with pkgs.my-vscode-extension-sets; [
         # python

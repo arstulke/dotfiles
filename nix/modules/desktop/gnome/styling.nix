@@ -11,6 +11,7 @@
     gnomeExtensions.system-monitor
     gnomeExtensions.clipboard-history
     gnomeExtensions.color-picker
+    gnomeExtensions.appindicator
     yaru-theme
   ];
 
@@ -18,12 +19,12 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       disabled-extensions = [];
-      enabled-extensions = [
-        pkgs.gnomeExtensions.dash-to-dock.extensionUuid
-        pkgs.gnomeExtensions.user-themes.extensionUuid
-        pkgs.gnomeExtensions.system-monitor.extensionUuid
-        pkgs.gnomeExtensions.clipboard-history.extensionUuid
-        pkgs.gnomeExtensions.color-picker.extensionUuid
+      enabled-extensions = with pkgs; [
+        gnomeExtensions.dash-to-dock.extensionUuid
+        gnomeExtensions.user-themes.extensionUuid
+        gnomeExtensions.system-monitor.extensionUuid
+        gnomeExtensions.clipboard-history.extensionUuid
+        gnomeExtensions.appindicator.extensionUuid
       ];
     };
     "org/gnome/desktop/interface" = {
