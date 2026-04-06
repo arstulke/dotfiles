@@ -20,7 +20,7 @@
 
     services.darts.autodarts = {
       enable = true;
-      version = "1.0.5";
+      version = "1.0.6";
     };
 
     services.darts.darts-caller = {
