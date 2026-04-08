@@ -16,7 +16,7 @@
         "--disable-gtk-ime"
       ];
     })
-    drawio
+    unstable.drawio # TODO switch to stable after upgrading to NixOS 26.05
     libreoffice
     keepassxc
 
