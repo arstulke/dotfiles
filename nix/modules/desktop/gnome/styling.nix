@@ -24,6 +24,7 @@
         gnomeExtensions.user-themes.extensionUuid
         gnomeExtensions.system-monitor.extensionUuid
         gnomeExtensions.clipboard-history.extensionUuid
+        gnomeExtensions.color-picker.extensionUuid
         gnomeExtensions.appindicator.extensionUuid
       ];
     };
