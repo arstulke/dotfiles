@@ -20,6 +20,22 @@
     # hardware.usbip-webcam-consumer.enable = true; # TODO enable after installing darts-rpi
   };
 
+  # Ollama for local LLM inference
+  services.ollama = {
+    enable = true;
+    package = pkgs.unstable.ollama-vulkan;
+    loadModels = [
+      "gemma4:e2b"
+    ];
+    host = "0.0.0.0"; # allows access from other devices on the network
+    environmentVariables = {
+      OLLAMA_NOHISTORY = "1";
+      OLLAMA_MAX_LOADED_MODELS = "1";
+      OLLAMA_KEEP_ALIVE = "5m"; # TODO increase for server setup
+      OLLAMA_NUM_PARALLEL = "2";
+    };
+  };
+
   # Add graphics driver
   boot.kernelParams = ["nouveau.modeset=0"]; # disabling nouveau (community opensource driver alternative for nvidia)
   services.xserver.videoDrivers = ["nvidia"];
