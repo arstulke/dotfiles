@@ -4,7 +4,7 @@
   ...
 }: {
   options.openFirewall = lib.mkOption {
-    type = types.bool;
+    type = lib.types.bool;
     default = false;
     description = "Whether to open firewall for Tailscale (allow incoming Wireguard connections from other Tailscale devices).";
   };
