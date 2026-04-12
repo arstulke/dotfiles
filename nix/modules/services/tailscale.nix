@@ -12,6 +12,7 @@
   config = cfg: {
     services.tailscale = {
       enable = true;
+      openFirewall = cfg.openFirewall;
       disableTaildrop = true; # disable Taildrop (file sharing feature)
       disableUpstreamLogging = true; # disable uploading logs to Tailscale
     };
