@@ -96,6 +96,74 @@ Notes for dual boot systems:
     ```
 4. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
 
+### Variant: Encrypted Disk & UEFI firmware
+
+1. Configure partitions
+    * Human readable definition:
+        1. fat32 (512 MiB) with `boot` and `esp` flags
+        2. ext4 (1024 MiB)
+        3. ext4 (the remaining space)
+    * Parted commands:
+        ```shell
+        # 1. Verify there are no existing partitions otherwise delete them
+        sudo parted /dev/x print
+
+        # 2. Create GPT partition table (fixes the "unknown" table)
+        sudo parted /dev/x mklabel gpt
+
+        # 3. EFI System Partition (512 MiB, fat32, with boot+esp flags)
+        sudo parted /dev/x mkpart primary fat32 1MiB 513MiB
+        sudo parted /dev/x set 1 esp on        # sets both esp and boot flags
+
+        # 4. /boot (1024 MiB, ext4)
+        sudo parted /dev/x mkpart primary ext4 513MiB 1537MiB
+
+        # 5. / root (remaining space, ext4)
+        sudo parted /dev/x mkpart primary ext4 1537MiB 100%
+
+        # 6. Verify
+        sudo parted /dev/x print
+        ```
+
+2. Create and mount filesystems & prepare NixOS config
+    ```
+    sudo -i
+
+    ### create file systems
+    mkfs.vfat /dev/x1
+    mkfs.ext4 /dev/x2
+    cryptsetup luksFormat /dev/x3
+    cryptsetup luksOpen /dev/x3 nixos
+    mkfs.ext4 /dev/mapper/nixos
+
+    ### mount partitions
+    mount /dev/mapper/nixos /mnt
+    mkdir /mnt/boot
+    mount /dev/x2 /mnt/boot
+    mkdir /mnt/boot/efi
+    mount /dev/x1 /mnt/boot/efi
+
+    ### generate default nixos config for my partitions
+    nixos-generate-config --root /mnt
+    ```
+3. Configure grub in `/mnt/etc/nixos/configuration.nix`:
+    ```
+    boot.loader = {
+        efi = {
+            canTouchEfiVariables = true;
+            efiSysMountPoint = "/boot/efi";
+        };
+        systemd-boot.enable = false;
+        grub = {
+            enable = true;
+            enableCryptodisk = true;
+            device = "nodev";
+            efiSupport = true;
+        };
+    };
+    ```
+4. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
+
 ### Finalizing setup
 1. Install NixOS default config
     ```shell
