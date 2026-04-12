@@ -56,81 +56,43 @@ Steps:
         ```
 
 4. Create and mount filesystems & prepare NixOS config
-    - Encrypted main volume:
-        ```shell
-        sudo -i
+    ```
+    sudo -i
 
-        ### create file systems
-        mkfs.vfat /dev/x1
-        mkfs.ext4 /dev/x2
-        cryptsetup luksFormat /dev/x3
-        cryptsetup luksOpen /dev/x3 nixos
-        mkfs.ext4 /dev/mapper/nixos
+    ### create file systems
+    mkfs.vfat /dev/x1
+    mkfs.ext4 /dev/x2
+    cryptsetup luksFormat /dev/x3
+    cryptsetup luksOpen /dev/x3 nixos
+    mkfs.ext4 /dev/mapper/nixos
 
-        ### mount partitions
-        mount /dev/mapper/nixos /mnt
-        mkdir /mnt/boot
-        mount /dev/x2 /mnt/boot
-        mkdir /mnt/boot/efi
-        mount /dev/x1 /mnt/boot/efi
+    ### mount partitions
+    mount /dev/mapper/nixos /mnt
+    mkdir /mnt/boot
+    mount /dev/x2 /mnt/boot
+    mkdir /mnt/boot/efi
+    mount /dev/x1 /mnt/boot/efi
 
-        ### generate default nixos config for my partitions
-        nixos-generate-config --root /mnt
-        ```
-    - Unencrypted main volume:
-        ```shell
-        sudo -i
-
-        ### create file systems
-        mkfs.vfat /dev/x1
-        mkfs.ext4 /dev/x2
-        mkfs.ext4 /dev/x3
-
-        ### mount partitions
-        mount /dev/x3 /mnt
-        mkdir /mnt/boot
-        mount /dev/x2 /mnt/boot
-        mkdir /mnt/boot/efi
-        mount /dev/x1 /mnt/boot/efi
-
-        ### generate default nixos config for my partitions
-        nixos-generate-config --root /mnt
-        ```
+    ### generate default nixos config for my partitions
+    nixos-generate-config --root /mnt
+    ```
 5. Configure grub in `/mnt/etc/nixos/configuration.nix`:
-    1. Volume encryption specific config:
-        - For encrypted main volume:
-            ```nix
-            boot.loader.grub = {
-                enableCryptodisk = true;
-                device = "nodev";
-            };
-            ```
-        - For unencrypted main volume:
-            ```nix
-            boot.loader.grub.device = "/dev/x";
-            ```
-    2. Boot firmware specific config:
-        - For UEFI systems:
-            ```nix
-            boot.loader = {
-                efi = {
-                    canTouchEfiVariables = true;
-                    efiSysMountPoint = "/boot/efi";
-                };
-                grub = {
-                    enable = true;
-                    efiSupport = true;
-                };
-            };
-            ```
-        - For legacy BIOS systems:
-            ```nix
-            boot.loader.grub.enable = true;
-            ```
-6. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix` (in case of unencrypted drive the values are mostly correct):
-   ```shell
-   blkid /dev/xy
-   ```
+    ```
+    boot.loader = {
+        efi = {
+            canTouchEfiVariables = true;
+            efiSysMountPoint = "/boot/efi";
+        };
+        systemd-boot.enable = false;
+        grub = {
+            enable = true;
+            enableCryptodisk = true;
+            device = "nodev";
+            efiSupport = true;
+        };
+    };
+    ```
+6. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
 7. Install NixOS default config
     ```shell
     ### install nixos
