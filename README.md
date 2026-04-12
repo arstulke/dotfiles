@@ -138,23 +138,6 @@ Notes for dual boot systems:
     ### generate default nixos config for my partitions
     nixos-generate-config --root /mnt
     ```
-3. Configure grub in `/mnt/etc/nixos/configuration.nix`:
-    ```
-    boot.loader = {
-        efi = {
-            canTouchEfiVariables = true;
-            efiSysMountPoint = "/boot/efi";
-        };
-        systemd-boot.enable = false;
-        grub = {
-            enable = true;
-            enableCryptodisk = true;
-            device = "nodev";
-            efiSupport = true;
-        };
-    };
-    ```
-4. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
 
 ### Finalizing setup
 1. Install NixOS default config
