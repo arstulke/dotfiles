@@ -42,6 +42,7 @@ in {
     services = {
       firewall.matter.enable = mkDefault true;
       nocodb.enable = mkDefault true;
+      tailscale.enable = mkDefault true;
     };
   };
 }
