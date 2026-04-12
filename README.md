@@ -26,34 +26,76 @@ Notes for dual boot systems:
 Steps:
 1. Boot from NixOS bootable USB-Stick
 2. Change keyboard layout
-    1. on GUI use the settings
-    2. on CLI ???
+    1. on GUI use the Gnome settings
+    2. on CLI `sudo loadkeys de`
 3. Configure partitions
-    * for single boot:
+    * Human readable definition:
         1. fat32 (512 MiB) with `boot` and `esp` flags
         2. ext4 (1024 MiB)
         3. ext4 (the remaining space)
+    * Parted commands:
+        ```shell
+        # 1. Verify there are no existing partitions otherwise delete them
+        sudo parted /dev/x print
+
+        # 2. Create GPT partition table (fixes the "unknown" table)
+        sudo parted /dev/x mklabel gpt
+
+        # 3. EFI System Partition (512 MiB, fat32, with boot+esp flags)
+        sudo parted /dev/x mkpart primary fat32 1MiB 513MiB
+        sudo parted /dev/x set 1 esp on        # sets both esp and boot flags
+
+        # 4. /boot (1024 MiB, ext4)
+        sudo parted /dev/x mkpart primary ext4 513MiB 1537MiB
+
+        # 5. / root (remaining space, ext4)
+        sudo parted /dev/x mkpart primary ext4 1537MiB 100%
+
+        # 6. Verify
+        sudo parted /dev/x print
+        ```
+
 4. Create and mount filesystems & prepare NixOS config
-    ```
-    sudo -i
+    - Encrypted main volume:
+        ```
+        sudo -i
 
-    ### create file systems
-    mkfs.vfat /dev/x1
-    mkfs.ext4 /dev/x2
-    cryptsetup luksFormat /dev/x3
-    cryptsetup luksOpen /dev/x3 nixos
-    mkfs.ext4 /dev/mapper/nixos
+        ### create file systems
+        mkfs.vfat /dev/x1
+        mkfs.ext4 /dev/x2
+        cryptsetup luksFormat /dev/x3
+        cryptsetup luksOpen /dev/x3 nixos
+        mkfs.ext4 /dev/mapper/nixos
 
-    ### mount partitions
-    mount /dev/mapper/nixos /mnt
-    mkdir /mnt/boot
-    mount /dev/x2 /mnt/boot
-    mkdir /mnt/boot/efi
-    mount /dev/x1 /mnt/boot/efi
+        ### mount partitions
+        mount /dev/mapper/nixos /mnt
+        mkdir /mnt/boot
+        mount /dev/x2 /mnt/boot
+        mkdir /mnt/boot/efi
+        mount /dev/x1 /mnt/boot/efi
 
-    ### generate default nixos config for my partitions
-    nixos-generate-config --root /mnt
-    ```
+        ### generate default nixos config for my partitions
+        nixos-generate-config --root /mnt
+        ```
+    - Unencrypted main volume:
+        ```
+        sudo -i
+
+        ### create file systems
+        mkfs.vfat /dev/x1
+        mkfs.ext4 /dev/x2
+        mkfs.ext4 /dev/x3
+
+        ### mount partitions
+        mount /dev/x3 /mnt
+        mkdir /mnt/boot
+        mount /dev/x2 /mnt/boot
+        mkdir /mnt/boot/efi
+        mount /dev/x1 /mnt/boot/efi
+
+        ### generate default nixos config for my partitions
+        nixos-generate-config --root /mnt
+        ```
 5. Configure grub in `/mnt/etc/nixos/configuration.nix`:
     ```
     boot.loader = {
