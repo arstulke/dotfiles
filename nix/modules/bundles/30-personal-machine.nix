@@ -11,6 +11,7 @@ in {
 
     programs.cli = {
       gemini.enable = mkDefault true;
+      ollama.enable = mkDefault true;
     };
 
     programs.gui = {
