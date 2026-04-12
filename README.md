@@ -57,7 +57,7 @@ Steps:
 
 4. Create and mount filesystems & prepare NixOS config
     - Encrypted main volume:
-        ```
+        ```shell
         sudo -i
 
         ### create file systems
@@ -78,7 +78,7 @@ Steps:
         nixos-generate-config --root /mnt
         ```
     - Unencrypted main volume:
-        ```
+        ```shell
         sudo -i
 
         ### create file systems
@@ -97,7 +97,7 @@ Steps:
         nixos-generate-config --root /mnt
         ```
 5. Configure grub in `/mnt/etc/nixos/configuration.nix`:
-    ```
+    ```nix
     boot.loader = {
         efi = {
             canTouchEfiVariables = true;
@@ -112,9 +112,12 @@ Steps:
         };
     };
     ```
-6. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
+6. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix` (in case of unencrypted drive the values are mostly correct):
+   ```shell
+   blkid /dev/xy
+   ```
 7. Install NixOS default config
-    ```
+    ```shell
     ### install nixos
     nixos-install
     reboot  # boot into drive and enter disk encryption password
@@ -126,7 +129,7 @@ Steps:
     nixos-rebuild boot --option sandbox false  # error "System not booted as systemd" can be ignored
     ```
 8. Clone and install this repo
-    ```
+    ```shell
     # install git
     nix-shell -p git
 
