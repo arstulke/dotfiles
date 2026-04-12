@@ -18,6 +18,12 @@
     ];
   };
 
+  options.openFirewall = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Whether to open firewall for SSH (allow incoming connections on TCP port 22).";
+  };
+
   config = cfg: {
     services.openssh = {
       enable = true;
@@ -28,7 +34,7 @@
     };
 
     networking.firewall = {
-      allowedTCPPorts = [22];
+      allowedTCPPorts = lib.mkIf cfg.openFirewall [22];
       allowedUDPPorts = [];
     };
 
