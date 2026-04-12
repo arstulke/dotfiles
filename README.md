@@ -22,13 +22,15 @@ Prerequisites:
 Notes for dual boot systems:
 * Configure the Boot order in BIOS to boot in Linux. This boots the GRUB bootloader which also displays the Windows installation.
 
-
-Steps:
+### Basic Steps
 1. Boot from NixOS bootable USB-Stick
 2. Change keyboard layout
     1. on GUI use the Gnome settings
     2. on CLI `sudo loadkeys de`
-3. Configure partitions
+
+### Variant: Encrypted Disk & UEFI firmware
+
+1. Configure partitions
     * Human readable definition:
         1. fat32 (512 MiB) with `boot` and `esp` flags
         2. ext4 (1024 MiB)
@@ -55,7 +57,7 @@ Steps:
         sudo parted /dev/x print
         ```
 
-4. Create and mount filesystems & prepare NixOS config
+2. Create and mount filesystems & prepare NixOS config
     ```
     sudo -i
 
@@ -76,7 +78,7 @@ Steps:
     ### generate default nixos config for my partitions
     nixos-generate-config --root /mnt
     ```
-5. Configure grub in `/mnt/etc/nixos/configuration.nix`:
+3. Configure grub in `/mnt/etc/nixos/configuration.nix`:
     ```
     boot.loader = {
         efi = {
@@ -92,8 +94,10 @@ Steps:
         };
     };
     ```
-6. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
-7. Install NixOS default config
+4. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
+
+### Finalizing setup
+1. Install NixOS default config
     ```shell
     ### install nixos
     nixos-install
@@ -105,7 +109,11 @@ Steps:
     unset SUDO_USER
     nixos-rebuild boot --option sandbox false  # error "System not booted as systemd" can be ignored
     ```
-8. Clone and install this repo
+2. Prefetch Displaylink Driver if enabled for this host:
+    ```shell
+    nix-prefetch-url --name displaylink-620.zip https://www.synaptics.com/sites/default/files/exe_files/2025-09/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu6.2-EXE.zip
+    ```
+3. Clone and install this repo
     ```shell
     # install git
     nix-shell -p git
@@ -122,17 +130,14 @@ Steps:
     # copy over your hardware-configuration.nix (!)
     cp -f /etc/nixos/hardware-configuration.nix /etc/dotfiles/nix/devices/<<DEVICE>>/
 
-    # prefetch displaylink driver
-    nix-prefetch-url --name displaylink-620.zip https://www.synaptics.com/sites/default/files/exe_files/2025-09/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu6.2-EXE.zip
-
     # rebuild nixos from flake config
     nixos-rebuild switch --flake /etc/dotfiles/nix#<<DEVICE>>
 
     # reboot the system
     reboot
     ```
-9. Login as "arne" using "1qay!QAY" and update the password: `passwd`
-10. Manual settings
+4. Login as "arne" using "1qay!QAY" and update the password: `passwd`
+5. Manual settings
     1. IntelliJ IDEA: sign-in and sync settings
     2. maybe generate ssh key: https://docs.github.com/de/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
     3. maybe store secret `ssh-config.txt` file as `~/.ssh/config`
