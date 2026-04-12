@@ -22,18 +22,42 @@ Prerequisites:
 Notes for dual boot systems:
 * Configure the Boot order in BIOS to boot in Linux. This boots the GRUB bootloader which also displays the Windows installation.
 
-
-Steps:
+### Basic Steps
 1. Boot from NixOS bootable USB-Stick
 2. Change keyboard layout
-    1. on GUI use the settings
-    2. on CLI ???
-3. Configure partitions
-    * for single boot:
+    1. on GUI use the Gnome settings
+    2. on CLI `sudo loadkeys de`
+
+### Variant: Encrypted Disk & UEFI firmware
+
+1. Configure partitions
+    * Human readable definition:
         1. fat32 (512 MiB) with `boot` and `esp` flags
         2. ext4 (1024 MiB)
         3. ext4 (the remaining space)
-4. Create and mount filesystems & prepare NixOS config
+    * Parted commands:
+        ```shell
+        # 1. Verify there are no existing partitions otherwise delete them
+        sudo parted /dev/x print
+
+        # 2. Create GPT partition table (fixes the "unknown" table)
+        sudo parted /dev/x mklabel gpt
+
+        # 3. EFI System Partition (512 MiB, fat32, with boot+esp flags)
+        sudo parted /dev/x mkpart primary fat32 1MiB 513MiB
+        sudo parted /dev/x set 1 esp on        # sets both esp and boot flags
+
+        # 4. /boot (1024 MiB, ext4)
+        sudo parted /dev/x mkpart primary ext4 513MiB 1537MiB
+
+        # 5. / root (remaining space, ext4)
+        sudo parted /dev/x mkpart primary ext4 1537MiB 100%
+
+        # 6. Verify
+        sudo parted /dev/x print
+        ```
+
+2. Create and mount filesystems & prepare NixOS config
     ```
     sudo -i
 
@@ -54,7 +78,7 @@ Steps:
     ### generate default nixos config for my partitions
     nixos-generate-config --root /mnt
     ```
-5. Configure grub in `/mnt/etc/nixos/configuration.nix`:
+3. Configure grub in `/mnt/etc/nixos/configuration.nix`:
     ```
     boot.loader = {
         efi = {
@@ -70,12 +94,64 @@ Steps:
         };
     };
     ```
-6. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
-7. Install NixOS default config
+4. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
+
+### Variant: Unencrypted Disk & BIOS firmware
+
+1. Configure partitions
+    * Human readable definition:
+        1. fat32 (512 MiB) with `boot` and `esp` flags
+        2. ext4 (1024 MiB)
+        3. ext4 (the remaining space)
+    * Parted commands:
+        ```shell
+        # 1. Verify there are no existing partitions otherwise delete them
+        sudo parted /dev/x print
+
+        # 2. Create GPT partition table (fixes the "unknown" table)
+        sudo parted /dev/x mklabel msdos
+
+        # 3. /boot (1024 MiB, ext4)
+        sudo parted /dev/x mkpart primary fat32 1MiB 501MiB
+
+        # 4. / root (remaining space, ext4)
+        sudo parted /dev/x mkpart primary ext4 501MiB 100%
+
+        # 5. Verify
+        sudo parted /dev/x print
+        ```
+
+2. Create and mount filesystems & prepare NixOS config
     ```
+    sudo -i
+
+    ### create file systems
+    sudo mkfs.fat -F 32 /dev/x1
+    sudo fatlabel /dev/x1 NIXBOOT
+    sudo mkfs.ext4 /dev/x2 -L NIXROOT
+
+    ### mount partitions
+    sudo mount /dev/disk/by-label/NIXROOT /mnt
+    sudo mkdir -p /mnt/boot
+    sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
+
+    ### generate default nixos config for my partitions
+    nixos-generate-config --root /mnt
+    ```
+3. Configure grub in `/mnt/etc/nixos/configuration.nix`:
+    ```
+    boot.loader.grub.enable = true;
+    boot.loader.grub.device = "/dev/x";
+    ```
+
+### Finalizing setup
+1. Install NixOS default config
+    ```shell
     ### install nixos
     nixos-install
-    reboot  # boot into drive and enter disk encryption password
+    reboot  # boot into drive
+    # (enter disk encryption password if enabled)
+    # login as root (use the previously defined password)
 
     ### troubleshooting (from live usb)
     # mount partitions in /mnt, /mnt/boot, /mnt/boot/efi (see above mount and decrypt commands)
@@ -83,8 +159,12 @@ Steps:
     unset SUDO_USER
     nixos-rebuild boot --option sandbox false  # error "System not booted as systemd" can be ignored
     ```
-8. Clone and install this repo
+2. Prefetch Displaylink Driver if enabled for this host:
+    ```shell
+    nix-prefetch-url --name displaylink-620.zip https://www.synaptics.com/sites/default/files/exe_files/2025-09/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu6.2-EXE.zip
     ```
+3. Clone and install this repo
+    ```shell
     # install git
     nix-shell -p git
 
@@ -98,19 +178,16 @@ Steps:
     chmod -R 755 /etc/dotfiles # should already be set like this
 
     # copy over your hardware-configuration.nix (!)
-    cp -f /etc/nixos/hardware-configuration.nix /etc/dotfiles/nix/devices/<<DEVICE>>/
-
-    # prefetch displaylink driver
-    nix-prefetch-url --name displaylink-620.zip https://www.synaptics.com/sites/default/files/exe_files/2025-09/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu6.2-EXE.zip
+    cp -f /etc/nixos/hardware-configuration.nix /etc/dotfiles/nix/hosts/<<HOST>>/
 
     # rebuild nixos from flake config
-    nixos-rebuild switch --flake /etc/dotfiles/nix#<<DEVICE>>
+    NIX_CONFIG="extra-experimental-features = nix-command flakes pipe-operators" nixos-rebuild switch --impure --flake /etc/dotfiles/nix#<<HOST>>
 
     # reboot the system
     reboot
     ```
-9. Login as "arne" using "1qay!QAY" and update the password: `passwd`
-10. Manual settings
+4. Login as "arne" using "1qay!QAY" and update the password: `passwd`
+5. Manual settings
     1. IntelliJ IDEA: sign-in and sync settings
     2. maybe generate ssh key: https://docs.github.com/de/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
     3. maybe store secret `ssh-config.txt` file as `~/.ssh/config`

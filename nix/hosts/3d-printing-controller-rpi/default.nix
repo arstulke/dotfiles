@@ -13,6 +13,7 @@
 
     services.ssh = {
       enable = true;
+      openFirewall = true; # allowing ssh access is uncritical because this host is only reachable from local network
       authorizedKeys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJg+GUBJMuJiNJeEMiNdqNXyKHjf4IoBTv+oCJF8QJbL arne@arne-desktop"
       ];

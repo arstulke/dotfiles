@@ -18,18 +18,20 @@
     ];
   };
 
+  options.openFirewall = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Whether to open firewall for SSH (allow incoming connections on TCP port 22).";
+  };
+
   config = cfg: {
     services.openssh = {
       enable = true;
+      openFirewall = cfg.openFirewall;
       settings = {
         PermitRootLogin = "no";
         PasswordAuthentication = false;
       };
-    };
-
-    networking.firewall = {
-      allowedTCPPorts = [22];
-      allowedUDPPorts = [];
     };
 
     users.users.${username}.openssh.authorizedKeys.keys = cfg.authorizedKeys;
