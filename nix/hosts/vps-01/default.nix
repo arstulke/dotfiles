@@ -17,10 +17,8 @@
   };
 
   # Bootloader
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/vda";
-  };
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/vda";
 
   # Swapfile
   swapDevices = [

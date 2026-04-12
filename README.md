@@ -107,9 +107,7 @@ Steps:
             ```
         - For unencrypted main volume:
             ```nix
-            boot.loader.grub = {
-                device = "/dev/x";
-            };
+            boot.loader.grub.device = "/dev/x";
             ```
     2. Boot firmware specific config:
         - For UEFI systems:
