@@ -138,13 +138,18 @@ Notes for dual boot systems:
     ### generate default nixos config for my partitions
     nixos-generate-config --root /mnt
     ```
+3. Configure grub in `/mnt/etc/nixos/configuration.nix`:
+    ```
+    boot.loader.grub.enable = true;
+    boot.loader.grub.device = "/dev/x";
+    ```
 
 ### Finalizing setup
 1. Install NixOS default config
     ```shell
     ### install nixos
     nixos-install
-    reboot  # boot into drive and enter disk encryption password
+    reboot  # boot into drive (and enter disk encryption password)
 
     ### troubleshooting (from live usb)
     # mount partitions in /mnt, /mnt/boot, /mnt/boot/efi (see above mount and decrypt commands)
@@ -171,10 +176,10 @@ Notes for dual boot systems:
     chmod -R 755 /etc/dotfiles # should already be set like this
 
     # copy over your hardware-configuration.nix (!)
-    cp -f /etc/nixos/hardware-configuration.nix /etc/dotfiles/nix/devices/<<DEVICE>>/
+    cp -f /etc/nixos/hardware-configuration.nix /etc/dotfiles/nix/hosts/<<HOST>>/
 
     # rebuild nixos from flake config
-    nixos-rebuild switch --flake /etc/dotfiles/nix#<<DEVICE>>
+    NIX_CONFIG="extra-experimental-features = nix-command flakes pipe-operators" nixos-rebuild switch --impure --flake /etc/dotfiles/nix#<<HOST>>
 
     # reboot the system
     reboot
