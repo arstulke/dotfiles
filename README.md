@@ -96,7 +96,7 @@ Notes for dual boot systems:
     ```
 4. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix`: `blkid /dev/xy`
 
-### Variant: Encrypted Disk & UEFI firmware
+### Variant: Unencrypted Disk & BIOS firmware
 
 1. Configure partitions
     * Human readable definition:
@@ -109,19 +109,15 @@ Notes for dual boot systems:
         sudo parted /dev/x print
 
         # 2. Create GPT partition table (fixes the "unknown" table)
-        sudo parted /dev/x mklabel gpt
+        sudo parted /dev/x mklabel msdos
 
-        # 3. EFI System Partition (512 MiB, fat32, with boot+esp flags)
-        sudo parted /dev/x mkpart primary fat32 1MiB 513MiB
-        sudo parted /dev/x set 1 esp on        # sets both esp and boot flags
+        # 3. /boot (1024 MiB, ext4)
+        sudo parted /dev/x mkpart primary fat32 1MiB 501MiB
 
-        # 4. /boot (1024 MiB, ext4)
-        sudo parted /dev/x mkpart primary ext4 513MiB 1537MiB
+        # 4. / root (remaining space, ext4)
+        sudo parted /dev/x mkpart primary ext4 501MiB 100%
 
-        # 5. / root (remaining space, ext4)
-        sudo parted /dev/x mkpart primary ext4 1537MiB 100%
-
-        # 6. Verify
+        # 5. Verify
         sudo parted /dev/x print
         ```
 
@@ -130,18 +126,14 @@ Notes for dual boot systems:
     sudo -i
 
     ### create file systems
-    mkfs.vfat /dev/x1
-    mkfs.ext4 /dev/x2
-    cryptsetup luksFormat /dev/x3
-    cryptsetup luksOpen /dev/x3 nixos
-    mkfs.ext4 /dev/mapper/nixos
+    sudo mkfs.fat -F 32 /dev/x1
+    sudo fatlabel /dev/x1 NIXBOOT
+    sudo mkfs.ext4 /dev/x2 -L NIXROOT
 
     ### mount partitions
-    mount /dev/mapper/nixos /mnt
-    mkdir /mnt/boot
-    mount /dev/x2 /mnt/boot
-    mkdir /mnt/boot/efi
-    mount /dev/x1 /mnt/boot/efi
+    sudo mount /dev/disk/by-label/NIXROOT /mnt
+    sudo mkdir -p /mnt/boot
+    sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
 
     ### generate default nixos config for my partitions
     nixos-generate-config --root /mnt
