@@ -97,21 +97,22 @@ Steps:
         nixos-generate-config --root /mnt
         ```
 5. Configure grub in `/mnt/etc/nixos/configuration.nix`:
-    ```nix
-    boot.loader = {
-        efi = {
-            canTouchEfiVariables = true;
-            efiSysMountPoint = "/boot/efi";
+    - For UEFI systems:
+        ```nix
+        boot.loader = {
+            efi = {
+                canTouchEfiVariables = true;
+                efiSysMountPoint = "/boot/efi";
+            };
+            systemd-boot.enable = false;
+            grub = {
+                enable = true;
+                enableCryptodisk = true;
+                device = "nodev";
+                efiSupport = true;
+            };
         };
-        systemd-boot.enable = false;
-        grub = {
-            enable = true;
-            enableCryptodisk = true;
-            device = "nodev";
-            efiSupport = true;
-        };
-    };
-    ```
+        ```
 6. Configure partition UUIDs in `/mnt/etc/nixos/hardware-configuration.nix` (in case of unencrypted drive the values are mostly correct):
    ```shell
    blkid /dev/xy
