@@ -9,9 +9,7 @@
       ssh = {
         enable = true;
         openFirewall = false; # denying ssh access from the outside, only allow from tailscale
-        authorizedKeys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJg+GUBJMuJiNJeEMiNdqNXyKHjf4IoBTv+oCJF8QJbL arne@arne-desktop"
-        ];
+        authorizedKeys = import ../../variables/trusted-ssh-keys.nix;
       };
     };
   };
