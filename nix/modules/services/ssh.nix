@@ -30,7 +30,8 @@
       openFirewall = cfg.openFirewall;
       settings = {
         PermitRootLogin = "no";
-        PasswordAuthentication = false;
+        PasswordAuthentication = false; # deny ssh authentication via ssh
+        KbdInteractiveAuthentication = true; # allow interactive password prompt like sudo command requires, so password authentication is allowed after ssh connection via ssh key is established
       };
     };
 
