@@ -11,6 +11,7 @@
         openFirewall = false; # denying ssh access from the outside, only allow from tailscale
         authorizedKeys = import ../../variables/trusted-ssh-keys.nix;
       };
+      openclaw.enable = true;
       ollama.enable = true;
     };
   };

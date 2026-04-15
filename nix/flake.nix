@@ -35,6 +35,9 @@
       inputs.nixpkgs.follows = "nixpkgs-openaws-vpn-client";
     };
 
+    # Openclaw
+    openclaw.url = "github:Scout-DJ/openclaw-nix";
+
     # NixOS on Raspberry Pi
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
   };
