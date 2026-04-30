@@ -18,6 +18,7 @@ in {
       fish.enable = mkDefault true;
       oh-my-posh.enable = mkDefault true;
       atuin.enable = mkDefault true;
+      ranger.enable = mkDefault true;
       baseline.enable = mkDefault true;
       carapace.enable = mkDefault true;
       direnv.enable = mkDefault true;
