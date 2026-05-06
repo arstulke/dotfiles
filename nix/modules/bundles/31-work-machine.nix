@@ -31,6 +31,7 @@ in {
       jetbrains.intellij-idea-ultimate.enable = mkDefault true;
       github.enable = true;
       k8s.enable = true;
+      google-chrome.disableFeatures = ["PdfOopif"];
       logseq.enable = true;
       openaws-vpn-client.enable = true;
       activitywatch.enable = true;
