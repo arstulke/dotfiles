@@ -9,13 +9,6 @@
     vlc
     pinta
     firefox
-    (google-chrome.override {
-      commandLineArgs = [
-        "--enable-features=UseOzonePlatform"
-        "--ozone-platform=wayland"
-        "--disable-gtk-ime"
-      ];
-    })
     unstable.drawio # TODO switch to stable after upgrading to NixOS 26.05
     libreoffice
     keepassxc

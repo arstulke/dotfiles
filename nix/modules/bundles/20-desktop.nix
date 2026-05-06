@@ -15,6 +15,7 @@ in {
     };
     programs.gui = {
       baseline.enable = mkDefault true;
+      google-chrome.enable = mkDefault true;
       noisetorch.enable = mkDefault true;
       printing.enable = mkDefault true;
       sublime-merge.enable = mkDefault true;
