@@ -14,7 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     pavucontrol
-    helvum
+    crosspipe
   ];
 
   # Troubleshooting sound playback issues:

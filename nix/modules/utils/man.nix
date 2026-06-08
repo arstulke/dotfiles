@@ -1,3 +1,3 @@
 {
-  documentation.man.generateCaches = false; # speeds up rebuilds
+  documentation.man.cache.enable = false; # speeds up rebuilds
 }

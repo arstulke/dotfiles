@@ -5,11 +5,11 @@
 }: {
   environment.systemPackages = with pkgs; [
     # general
-    flameshot
+    gradia
     vlc
     pinta
     firefox
-    unstable.drawio # TODO switch to stable after upgrading to NixOS 26.05
+    drawio
     libreoffice
     keepassxc
 

@@ -28,6 +28,6 @@
   ];
 
   # NixOS & Home-Manager state
-  system.stateVersion = "25.11";
-  hm.home.stateVersion = "25.11";
+  system.stateVersion = "26.05";
+  hm.home.stateVersion = "26.05";
 }

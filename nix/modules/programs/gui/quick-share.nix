@@ -4,7 +4,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    unstable.rquickshare # TODO switch to stable after upgrading to NixOS 26.05
+    rquickshare
   ];
 
   networking.firewall = {

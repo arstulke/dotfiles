@@ -9,7 +9,7 @@
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-open-terminal/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-open-filemanager/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-edit-config/"
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-flameshot/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-gradia/"
       ];
     };
 
@@ -31,11 +31,11 @@
       binding = "<Super>c";
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-flameshot" = let
-      flameshot-gui = pkgs.writeShellScriptBin "flameshot-gui" "${pkgs.flameshot}/bin/flameshot gui";
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/my-gradia" = let
+      gradia-screenshot = pkgs.writeShellScriptBin "gradia-screenshot" "${pkgs.gradia}/bin/gradia --screenshot";
     in {
-      name = "Open flameshot (screenshot tool)";
-      command = "${flameshot-gui}/bin/flameshot-gui";
+      name = "Open gradia (screenshot tool)";
+      command = "${gradia-screenshot}/bin/gradia-screenshot";
       binding = "<Primary><Shift><Alt>section";
     };
   };
