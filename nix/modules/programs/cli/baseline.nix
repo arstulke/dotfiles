@@ -55,9 +55,12 @@
     environment.shellAliases = {
       edit = cfg.editor;
       serve = "static-web-server --port 3000 --root ./";
-      encrypt-as-zip = "#!/bin/bash\\nfunction _ezip() { zip --encrypt \"\${1}.zip\" \"\$1\"; }; _ezip";
-
       cls = "echo 'Are you stupid? I hate Windows and CMD!'";
+    };
+
+    programs.fish.shellAliases = {
+      # requires a fish-only alias because the used syntax is only compatible with fish
+      encrypt-as-zip = "zip --encrypt $argv[1].zip $argv[1]";
     };
 
     programs.fish.shellAbbrs = {
