@@ -48,11 +48,6 @@ jobs:
         with:
           cachix_auth_token: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-      - name: "Build 3d-printing-controller-rpi"
-        uses: ./.github/actions/build-nix-host
-        with:
-          host: 3d-printing-controller-rpi
-
       - name: "Build darts-rpi"
         uses: ./.github/actions/build-nix-host
         with:
