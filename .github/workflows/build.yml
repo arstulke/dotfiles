@@ -1,0 +1,59 @@
+name: Build NixOS hosts
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-x86_64:
+    name: Build x86_64 hosts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: "Setup Nix & Cachix"
+        uses: ./.github/actions/setup-nix-cachix
+        with:
+          cachix_auth_token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: "Build personal-laptop"
+        uses: ./.github/actions/build-nix-host
+        with:
+          host: personal-laptop
+
+      - name: "Build personal-desktop"
+        uses: ./.github/actions/build-nix-host
+        with:
+          host: personal-desktop
+
+      - name: "Build vps-01"
+        uses: ./.github/actions/build-nix-host
+        with:
+          host: vps-01
+
+      - name: "Build work-laptop"
+        uses: ./.github/actions/build-nix-host
+        with:
+          host: work-laptop
+
+  build-aarch64:
+    name: Build aarch64 hosts
+    if: false
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: "Setup Nix & Cachix"
+        uses: ./.github/actions/setup-nix-cachix
+        with:
+          cachix_auth_token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: "Build 3d-printing-controller-rpi"
+        uses: ./.github/actions/build-nix-host
+        with:
+          host: 3d-printing-controller-rpi
+
+      - name: "Build darts-rpi"
+        uses: ./.github/actions/build-nix-host
+        with:
+          host: darts-rpi

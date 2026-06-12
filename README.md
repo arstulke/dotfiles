@@ -161,7 +161,7 @@ Notes for dual boot systems:
     ```
 2. Prefetch Displaylink Driver if enabled for this host:
     ```shell
-    nix-prefetch-url --name displaylink-620.zip https://www.synaptics.com/sites/default/files/exe_files/2025-09/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu6.2-EXE.zip
+    ./nix-prefetch.sh
     ```
 3. Clone and install this repo
     ```shell
