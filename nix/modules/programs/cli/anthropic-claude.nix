@@ -27,6 +27,9 @@ in {
     # usage monitor
     claude-monitor # in CLI
     patchedGnomeExt # in gnome statusbar
+
+    # addons
+    unstable.rtk
   ];
 
   # usage monitor in gnome statusbar
@@ -40,4 +43,9 @@ in {
       "ccusage-command" = "${ccUsageCommand}/bin/ccusage";
     };
   };
+
+  # initializing rtk
+  system.userActivationScripts.initRtkForGemini = ''
+    ${pkgs.unstable.rtk}/bin/rtk init -g
+  '';
 }

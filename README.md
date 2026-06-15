@@ -198,6 +198,7 @@ Notes for dual boot systems:
             2. On personal-desktop: Add Keybinding "Toggle Mute" on L1 macro key 
             3. On personal-desktop: Add Keybinding "Toggle Deafen" on L2 macro key 
         2. Spotify: Login
+        3. install plugins for *gemini cli*
     6. for work-laptop:
         1. copy files from old system to home directory:
             1. `~/.aws/config`
@@ -208,6 +209,7 @@ Notes for dual boot systems:
             6. `~/.kube/config`
         2. copy keepass file from old system to desktop
         3. copy OpenVPN profiles from old system to desktop or a subfolder & import the .ovpn file using the Networkmanager-GUI (see system Settings GUI > Network)
+        4. install plugins for *claude code*
 
 
 ## Backup
@@ -219,7 +221,10 @@ Before erasing your system you need to backup the following dirs and files:
     * check everything outside a git repo
     * unpushed changes in git repos
     * maybe files ignored by git
+* On personal-machine:
+    * Gemini plugins and config (e.g. rtk, superpowers)
 * On work-laptop:
     * `~/.aws/config` and `~/.aws/credentials`
-    * keepass file
+    * Keepass file
     * OpenVPN profiles in `~/Desktop/openvpn`
+    * Claude Code plugins and config (e.g. rtk, superpowers)
