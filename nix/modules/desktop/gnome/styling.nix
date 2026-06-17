@@ -6,12 +6,13 @@
   environment.systemPackages = with pkgs; [
     dconf-editor
     gnome-tweaks
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.user-themes
-    gnomeExtensions.system-monitor
+    gnomeExtensions.appindicator
     gnomeExtensions.clipboard-history
     gnomeExtensions.color-picker
-    gnomeExtensions.appindicator
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.gtk4-desktop-icons-ng-ding
+    gnomeExtensions.system-monitor
+    gnomeExtensions.user-themes
     yaru-theme
   ];
 
@@ -20,12 +21,13 @@
       disable-user-extensions = false;
       disabled-extensions = [];
       enabled-extensions = with pkgs; [
-        gnomeExtensions.dash-to-dock.extensionUuid
-        gnomeExtensions.user-themes.extensionUuid
-        gnomeExtensions.system-monitor.extensionUuid
+        gnomeExtensions.appindicator.extensionUuid
         gnomeExtensions.clipboard-history.extensionUuid
         gnomeExtensions.color-picker.extensionUuid
-        gnomeExtensions.appindicator.extensionUuid
+        gnomeExtensions.dash-to-dock.extensionUuid
+        gnomeExtensions.gtk4-desktop-icons-ng-ding.extensionUuid
+        gnomeExtensions.system-monitor.extensionUuid
+        gnomeExtensions.user-themes.extensionUuid
       ];
     };
     "org/gnome/desktop/interface" = {
