@@ -10,6 +10,7 @@
       "google-chrome.desktop"
       "discord.desktop"
       "steam.desktop"
+      "BambuStudio.desktop"
       "code.desktop"
       "webstorm.desktop"
       "sublime_merge.desktop"

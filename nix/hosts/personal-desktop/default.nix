@@ -8,12 +8,15 @@
     bundles."30-personal-machine".enable = true;
     bundles."40-gaming".enable = true;
 
+    programs.gui."3d-printing-design".enableNvidiaSupport = true;
+
     desktop.gnome.dock.favorite-apps = [
       "org.keepassxc.KeePassXC.desktop"
       "com.yubico.yubioath.desktop"
       "google-chrome.desktop"
       "discord.desktop"
       "steam.desktop"
+      "BambuStudio.desktop"
       "code.desktop"
       "webstorm.desktop"
       "sublime_merge.desktop"

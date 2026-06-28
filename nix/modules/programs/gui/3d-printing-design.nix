@@ -1,13 +1,26 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    # 3D modeling
-    openscad
+  options.enableNvidiaSupport = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Enable bambu-studio's workaround for OpenGL issues on Nvidia GPUs.";
+  };
 
-    # 3D slicing
-    # bambu-studio
-  ];
+  config = cfg: {
+    environment.systemPackages = with pkgs; [
+      # 3D modeling
+      openscad
+
+      # 3D slicing
+      ((unstable.bambu-studio.override {
+          withNvidiaGLWorkaround = cfg.enableNvidiaSupport;
+        }).overrideAttrs (old: {
+          enableParallelBuilding = false;
+        }))
+    ];
+  };
 }
