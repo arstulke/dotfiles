@@ -8,6 +8,6 @@
     openscad
 
     # 3D slicing
-    bambu-studio
+    unstable.bambu-studio
   ];
 }
