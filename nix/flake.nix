@@ -68,6 +68,7 @@
           username = "arne";
           gitCreds.name = "Arne Stulken";
           gitCreds.email = "21034491+arstulke@users.noreply.github.com";
+          nixos-raspberrypi = inputs.nixos-raspberrypi;
         };
         sharedConfig = {
           modules.bundles."10-shared".enable = true;
