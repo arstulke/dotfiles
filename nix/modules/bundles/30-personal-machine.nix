@@ -17,6 +17,7 @@ in {
 
     programs.gui = {
       jetbrains.webstorm.enable = mkDefault true;
+      zed.enable = mkDefault true;
       "3d-printing-design".enable = mkDefault true;
       airplay-mirroring-server.enable = mkDefault true;
       ausweis-app.enable = mkDefault true;
