@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   modules = {
     bundles."20-desktop".enable = true;
     bundles."30-personal-machine".enable = true;
@@ -21,9 +25,15 @@
   };
 
   # Add graphics driver
-  boot.kernelParams = ["nouveau.modeset=0"]; # disabling nouveau (community opensource driver alternative for nvidia)
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.open = false; # opensource drivers only supported for Turing or later GPUs (RTX series, GTX 16xx)
+  hardware.graphics.enable = true; # enables OpenGL/Vulkan support
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580; # Using 580.xx legacy drivers because newer drivers do not support Pascal GPUs
+    open = false; # GTX 1060 needs the proprietary driver, not the open kernel module. Open source drivers are only supported for Turing or later GPUs (RTX series, GTX 16xx)
+    modesetting.enable = true;
+    nvidiaSettings = true;
+    powerManagement.enable = false;
+  };
 
   # Custom WirePlumber configuration
   environment.etc."wireplumber/wireplumber.conf.d/98-disable-devices.conf".text = ''
