@@ -45,7 +45,7 @@ in {
   };
 
   # initializing rtk
-  system.userActivationScripts.initRtkForGemini = ''
+  system.userActivationScripts.initRtkForClaudeCode = ''
     ${pkgs.unstable.rtk}/bin/rtk init -g
   '';
 }

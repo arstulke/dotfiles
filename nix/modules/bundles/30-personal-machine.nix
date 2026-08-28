@@ -10,7 +10,8 @@ in {
     bundles."20-desktop".enable = true;
 
     programs.cli = {
-      gemini.enable = mkDefault true;
+      # TODO after testing API based LLM service provider: replace with another coding harness
+      anthropic-claude-code.enable = mkDefault true;
       ollama.enable = mkDefault true;
     };
 
