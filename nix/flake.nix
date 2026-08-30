@@ -43,6 +43,12 @@
 
     # NixOS on Raspberry Pi
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
+
+    # Fast native Spotify client with local playback and Spotify Connect
+    fastpotify = {
+      url = "github:crmne/fastpotify/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = inputs:

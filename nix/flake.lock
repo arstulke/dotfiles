@@ -96,6 +96,28 @@
         "type": "github"
       }
     },
+    "fastpotify": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1788000320,
+        "narHash": "sha256-r2saSdIBvz8WSGtqR3qKKwGgIevS7DK1Tz4CLTbJXaw=",
+        "owner": "crmne",
+        "repo": "fastpotify",
+        "rev": "c25e003e2623090dc260d8548886326e0961b089",
+        "type": "github"
+      },
+      "original": {
+        "owner": "crmne",
+        "ref": "v0.3.0",
+        "repo": "fastpotify",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "locked": {
         "lastModified": 1767039857,
@@ -559,6 +581,7 @@
       "inputs": {
         "agenix": "agenix",
         "displayconfig-mutter": "displayconfig-mutter",
+        "fastpotify": "fastpotify",
         "flake-utils": "flake-utils_2",
         "haumea": "haumea",
         "home-manager": "home-manager_2",
@@ -570,6 +593,27 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "openaws-vpn-client": "openaws-vpn-client",
         "pre-commit-hooks": "pre-commit-hooks"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "fastpotify",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787834454,
+        "narHash": "sha256-jXSvqn04IOecJCvSvl8+g3PsbDVNP6qKs6dKUs/b16k=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "dc2fd1acc537f3583744e1373597a5731ff7a6e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "systems": {
