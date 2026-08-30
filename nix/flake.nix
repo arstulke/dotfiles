@@ -49,6 +49,12 @@
       url = "github:crmne/fastpotify/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    # Local-first alternative to Logitech Options+
+    openlogi = {
+      url = "github:AprilNEA/OpenLogi/v0.8.3";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = inputs:

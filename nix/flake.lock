@@ -558,6 +558,28 @@
         "type": "github"
       }
     },
+    "openlogi": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "rust-overlay": "rust-overlay_2"
+      },
+      "locked": {
+        "lastModified": 1788106022,
+        "narHash": "sha256-9Mn1xZ5+xxZosjDwORbB9JLlOaNyY1/Q1mljb07aK9U=",
+        "owner": "AprilNEA",
+        "repo": "OpenLogi",
+        "rev": "4d0936de070b7aa25598c4ba26cd583c604fc95d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AprilNEA",
+        "ref": "v0.8.3",
+        "repo": "OpenLogi",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -592,6 +614,7 @@
         "nixpkgs-openaws-vpn-client": "nixpkgs-openaws-vpn-client",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "openaws-vpn-client": "openaws-vpn-client",
+        "openlogi": "openlogi",
         "pre-commit-hooks": "pre-commit-hooks"
       }
     },
@@ -608,6 +631,27 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "dc2fd1acc537f3583744e1373597a5731ff7a6e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "openlogi",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787246814,
+        "narHash": "sha256-pEd4/iPY3Zm/EhhHmeB1QnIWXJSLx7gJzD/05mm2MCo=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "c84e121aaede7ef8c7bd9fb5154ccc1599e07816",
         "type": "github"
       },
       "original": {

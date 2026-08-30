@@ -9,6 +9,7 @@
     bundles."40-gaming".enable = true;
 
     programs.gui."3d-printing-design".enableNvidiaSupport = true;
+    programs.gui.openlogi.enable = true;
 
     desktop.gnome.dock.favorite-apps = [
       "org.keepassxc.KeePassXC.desktop"
