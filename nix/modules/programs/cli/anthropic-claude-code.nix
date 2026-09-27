@@ -25,7 +25,7 @@ in {
     unstable.claude-code
 
     # usage monitor
-    claude-monitor # in CLI
+    unstable.claude-monitor # in CLI
     patchedGnomeExt # in gnome statusbar
 
     # addons
