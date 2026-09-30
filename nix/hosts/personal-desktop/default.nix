@@ -18,6 +18,7 @@
       "discord.desktop"
       "steam.desktop"
       "BambuStudio.desktop"
+      "com.anthropic.Claude.desktop"
       "code.desktop"
       "webstorm.desktop"
       "sublime_merge.desktop"
