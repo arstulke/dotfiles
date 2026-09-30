@@ -29,6 +29,7 @@ in {
     };
     programs.gui = {
       jetbrains.intellij-idea-ultimate.enable = mkDefault true;
+      anthropic-claude-desktop.enable = mkDefault true;
       github.enable = true;
       k8s.enable = true;
       google-chrome.disableFeatures = ["PdfOopif"];

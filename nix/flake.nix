@@ -55,6 +55,13 @@
       url = "github:AprilNEA/OpenLogi/v0.8.3";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    # Unofficial Linux package of Claude Desktop with extra features
+    claude-desktop-extra = {
+      url = "github:patrickjaja/claude-desktop-extra/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = inputs:

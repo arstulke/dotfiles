@@ -19,6 +19,7 @@ in {
       jetbrains.webstorm.enable = mkDefault true;
       "3d-printing-design".enable = mkDefault true;
       airplay-mirroring-server.enable = mkDefault true;
+      anthropic-claude-desktop.enable = mkDefault true;
       ausweis-app.enable = mkDefault true;
       discord.enable = mkDefault true;
       obs.enable = mkDefault true;

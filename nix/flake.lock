@@ -38,6 +38,30 @@
         "type": "github"
       }
     },
+    "claude-desktop-extra": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790656664,
+        "narHash": "sha256-rvjEqTvyH/kLoscmL9cUla9luFXTr/E6nnkvZ677XF0=",
+        "owner": "patrickjaja",
+        "repo": "claude-desktop-extra",
+        "rev": "8f4de6c68e3fbb00f2be5916580c3fdaa751e7bc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "patrickjaja",
+        "ref": "master",
+        "repo": "claude-desktop-extra",
+        "type": "github"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1745454774,
@@ -602,6 +626,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "claude-desktop-extra": "claude-desktop-extra",
         "displayconfig-mutter": "displayconfig-mutter",
         "fastpotify": "fastpotify",
         "flake-utils": "flake-utils_2",
