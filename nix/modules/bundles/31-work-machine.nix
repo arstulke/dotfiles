@@ -26,6 +26,8 @@ in {
       aws-cli.prepVsCode = mkDefault true;
       nodejs_22.enable = mkDefault true;
       openvpn.enable = mkDefault true;
+
+      dotai.enable = mkDefault true;
     };
     programs.gui = {
       jetbrains.intellij-idea-ultimate.enable = mkDefault true;

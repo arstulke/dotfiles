@@ -13,6 +13,8 @@ in {
       # TODO after testing API based LLM service provider: replace with another coding harness
       anthropic-claude-code.enable = mkDefault true;
       ollama.enable = mkDefault true;
+
+      dotai.enable = mkDefault true;
     };
 
     programs.gui = {
