@@ -22,6 +22,7 @@ in {
 
     programs.cli = {
       anthropic-claude-code.enable = mkDefault true;
+      mcp-shell-server.enable = mkDefault true;
       aws-cli.enable = mkDefault true;
       aws-cli.prepVsCode = mkDefault true;
       nodejs_22.enable = mkDefault true;
