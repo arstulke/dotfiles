@@ -36,6 +36,27 @@
         "type": "github"
       }
     },
+    "aw-manual": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791673115,
+        "narHash": "sha256-A+Xb4dINZNci2bEw3ovL4LmI7f+CYkg0ohu/L+C70iY=",
+        "ref": "ccr-cc7d7e1f-udswvt",
+        "rev": "0d326bb1a8ccf1f39f1eab18f40b61e4e2906f77",
+        "revCount": 13,
+        "type": "git",
+        "url": "ssh://git@github.com/arstulke/aw-manual"
+      },
+      "original": {
+        "ref": "ccr-cc7d7e1f-udswvt",
+        "type": "git",
+        "url": "ssh://git@github.com/arstulke/aw-manual"
+      }
+    },
     "claude-desktop-extra": {
       "inputs": {
         "flake-utils": [
@@ -580,6 +601,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "aw-manual": "aw-manual",
         "claude-desktop-extra": "claude-desktop-extra",
         "displayconfig-mutter": "displayconfig-mutter",
         "fastpotify": "fastpotify",
