@@ -56,6 +56,12 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    # Manual activity tracking for ActivityWatch
+    aw-manual = {
+      url = "github:arstulke/aw-manual/v0.1.0";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # Unofficial Linux package of Claude Desktop with extra features
     claude-desktop-extra = {
       url = "github:patrickjaja/claude-desktop-extra/master";
