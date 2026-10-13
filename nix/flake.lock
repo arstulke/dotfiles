@@ -36,6 +36,27 @@
         "type": "github"
       }
     },
+    "aw-manual": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791932508,
+        "narHash": "sha256-9TJuhe0ZPlFeu0iqYRbK/UWxeYS32Btn1kBGkOKSoTY=",
+        "owner": "arstulke",
+        "repo": "aw-manual",
+        "rev": "78feec7a041ee662431cd98856735b3849f36319",
+        "type": "github"
+      },
+      "original": {
+        "owner": "arstulke",
+        "ref": "ccr-cc7d7e1f-udswvt",
+        "repo": "aw-manual",
+        "type": "github"
+      }
+    },
     "claude-desktop-extra": {
       "inputs": {
         "flake-utils": [
@@ -580,6 +601,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "aw-manual": "aw-manual",
         "claude-desktop-extra": "claude-desktop-extra",
         "displayconfig-mutter": "displayconfig-mutter",
         "fastpotify": "fastpotify",

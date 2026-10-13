@@ -56,6 +56,14 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    # Manual activity tracking for ActivityWatch
+    # private repository, so fetched via SSH
+    # TODO: switch to the default branch once arstulke/aw-manual#1 is merged
+    aw-manual = {
+      url = "github:arstulke/aw-manual?ref=ccr-cc7d7e1f-udswvt";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # Unofficial Linux package of Claude Desktop with extra features
     claude-desktop-extra = {
       url = "github:patrickjaja/claude-desktop-extra/master";

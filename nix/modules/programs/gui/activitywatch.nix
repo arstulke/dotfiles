@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     activitywatch
     gnomeExtensions.focused-window-d-bus
@@ -31,4 +35,8 @@
       };
     };
   };
+
+  # manual activity tracking for ActivityWatch (https://github.com/arstulke/aw-manual)
+  home-manager.sharedModules = [inputs.aw-manual.homeManagerModules.default];
+  hm.services.aw-manual.enable = true;
 }
