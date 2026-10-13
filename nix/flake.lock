@@ -36,6 +36,28 @@
         "type": "github"
       }
     },
+    "aw-manual": {
+      "inputs": {
+        "crane": "crane",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792111805,
+        "narHash": "sha256-CEdz7CvpzbRNmqWNgDRv+MwJXp5wkv8YDrYbNaOavR8=",
+        "owner": "arstulke",
+        "repo": "aw-manual",
+        "rev": "09096639f0030e83ff448d893b6a88b0cbe0453d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "arstulke",
+        "ref": "v0.1.0",
+        "repo": "aw-manual",
+        "type": "github"
+      }
+    },
     "claude-desktop-extra": {
       "inputs": {
         "flake-utils": [
@@ -62,6 +84,21 @@
     },
     "crane": {
       "locked": {
+        "lastModified": 1791754810,
+        "narHash": "sha256-cN0Mgk+sQtCJcGWs9H4M0CnLRAuC4I8aCwiBTcBJs6E=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "bd63bf1d0a0f6dcacd7549c714a671ee63b0db6a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "crane_2": {
+      "locked": {
         "lastModified": 1745454774,
         "narHash": "sha256-oLvmxOnsEKGtwczxp/CwhrfmQUG2ym24OMWowcoRhH8=",
         "owner": "ipetkov",
@@ -77,7 +114,7 @@
     },
     "displayconfig-mutter": {
       "inputs": {
-        "crane": "crane",
+        "crane": "crane_2",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       },
@@ -580,6 +617,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "aw-manual": "aw-manual",
         "claude-desktop-extra": "claude-desktop-extra",
         "displayconfig-mutter": "displayconfig-mutter",
         "fastpotify": "fastpotify",
