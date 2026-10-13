@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791932508,
-        "narHash": "sha256-9TJuhe0ZPlFeu0iqYRbK/UWxeYS32Btn1kBGkOKSoTY=",
+        "lastModified": 1791935457,
+        "narHash": "sha256-e9TJinXKeA5+QxbjoAGPZ3wOZUsyog+CDGq6TZCxQrQ=",
         "owner": "arstulke",
         "repo": "aw-manual",
-        "rev": "78feec7a041ee662431cd98856735b3849f36319",
+        "rev": "dc9b29cab97e98a8700dd4600787f744573cd800",
         "type": "github"
       },
       "original": {
