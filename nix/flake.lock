@@ -38,6 +38,7 @@
     },
     "aw-manual": {
       "inputs": {
+        "crane": "crane_2",
         "nixpkgs": [
           "nixpkgs-unstable"
         ]
@@ -88,6 +89,21 @@
         "owner": "ipetkov",
         "repo": "crane",
         "rev": "efd36682371678e2b6da3f108fdb5c613b3ec598",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "crane_2": {
+      "locked": {
+        "lastModified": 1791754810,
+        "narHash": "sha256-cN0Mgk+sQtCJcGWs9H4M0CnLRAuC4I8aCwiBTcBJs6E=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "bd63bf1d0a0f6dcacd7549c714a671ee63b0db6a",
         "type": "github"
       },
       "original": {
