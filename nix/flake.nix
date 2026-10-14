@@ -58,9 +58,9 @@
 
     # Manual activity tracking for ActivityWatch
     # private repository, so fetched via SSH
-    # TODO: switch to the default branch once arstulke/aw-manual#1 is merged
+    # TODO: switch to the default branch once arstulke/aw-manual#14 is merged
     aw-manual = {
-      url = "github:arstulke/aw-manual?ref=ccr-cc7d7e1f-udswvt";
+      url = "github:arstulke/aw-manual?ref=ccr-ec8cf8ab-gw0coz";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
