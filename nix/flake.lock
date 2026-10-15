@@ -95,28 +95,6 @@
         "type": "github"
       }
     },
-    "fastpotify": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1788000320,
-        "narHash": "sha256-r2saSdIBvz8WSGtqR3qKKwGgIevS7DK1Tz4CLTbJXaw=",
-        "owner": "crmne",
-        "repo": "fastpotify",
-        "rev": "c25e003e2623090dc260d8548886326e0961b089",
-        "type": "github"
-      },
-      "original": {
-        "owner": "crmne",
-        "ref": "v0.3.0",
-        "repo": "fastpotify",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "locked": {
         "lastModified": 1767039857,
@@ -541,7 +519,7 @@
         "nixpkgs": [
           "nixpkgs-unstable"
         ],
-        "rust-overlay": "rust-overlay_2"
+        "rust-overlay": "rust-overlay"
       },
       "locked": {
         "lastModified": 1788106022,
@@ -582,7 +560,6 @@
         "agenix": "agenix",
         "claude-desktop-extra": "claude-desktop-extra",
         "displayconfig-mutter": "displayconfig-mutter",
-        "fastpotify": "fastpotify",
         "flake-utils": "flake-utils_2",
         "haumea": "haumea",
         "home-manager": "home-manager",
@@ -594,31 +571,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "openaws-vpn-client": "openaws-vpn-client",
         "openlogi": "openlogi",
-        "pre-commit-hooks": "pre-commit-hooks"
+        "pre-commit-hooks": "pre-commit-hooks",
+        "spotifast": "spotifast"
       }
     },
     "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "fastpotify",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1787834454,
-        "narHash": "sha256-jXSvqn04IOecJCvSvl8+g3PsbDVNP6qKs6dKUs/b16k=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "dc2fd1acc537f3583744e1373597a5731ff7a6e3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
           "openlogi",
@@ -636,6 +593,49 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "spotifast",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787834454,
+        "narHash": "sha256-jXSvqn04IOecJCvSvl8+g3PsbDVNP6qKs6dKUs/b16k=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "dc2fd1acc537f3583744e1373597a5731ff7a6e3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "spotifast": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "rust-overlay": "rust-overlay_2"
+      },
+      "locked": {
+        "lastModified": 1792092692,
+        "narHash": "sha256-tYncFZI6m7W+ACj9wizmQUrFktDI3SR9dSQ0uS7iIg0=",
+        "owner": "crmne",
+        "repo": "spotifast",
+        "rev": "a4c1b3ef6c9667507f198312453766f6ba953710",
+        "type": "github"
+      },
+      "original": {
+        "owner": "crmne",
+        "ref": "v0.13.3",
+        "repo": "spotifast",
         "type": "github"
       }
     },
