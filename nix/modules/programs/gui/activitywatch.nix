@@ -15,6 +15,7 @@
   hm.services.activitywatch = {
     enable = true;
     watchers = {
+      # TODO fix this
       aw-watcher-afk = {
         package = pkgs.activitywatch;
         settings = {
@@ -23,12 +24,7 @@
         };
       };
 
-      aw-watcher-window = {
-        package = pkgs.activitywatch;
-        settings = {
-          poll_time = 1;
-        };
-      };
+      # no additional watchers due to privacy concerns (regarding data processing for easier time tracking)
     };
   };
 }
