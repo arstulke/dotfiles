@@ -46,7 +46,7 @@
 
     # Fast native Spotify client with local playback and Spotify Connect
     fastpotify = {
-      url = "github:crmne/fastpotify/v0.3.0";
+      url = "github:crmne/fastpotify/v0.8.0";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
