@@ -28,6 +28,9 @@
             mermaid = true;
             nix = true;
           };
+          agent = {
+            dock = "right";
+          };
           autosave = {
             after_delay = {
               milliseconds = 500;
@@ -46,6 +49,7 @@
           soft_wrap = "editor_width";
           theme = {
             mode = "dark";
+            light = "Ayu Light";
             dark = "Ayu Dark";
           };
           title_bar = {
