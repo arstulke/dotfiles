@@ -3,5 +3,5 @@
   inputs,
   ...
 }: {
-  environment.systemPackages = with pkgs; [fastpotify];
+  environment.systemPackages = with pkgs; [spotifast];
 }

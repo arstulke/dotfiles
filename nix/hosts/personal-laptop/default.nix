@@ -10,7 +10,7 @@
       "google-chrome.desktop"
       "discord.desktop"
       "steam.desktop"
-      "fastpotify.desktop"
+      "spotifast.desktop"
       "BambuStudio.desktop"
       "com.anthropic.Claude.desktop"
       "code.desktop"
