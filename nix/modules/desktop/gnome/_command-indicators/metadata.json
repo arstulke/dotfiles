@@ -1,0 +1,7 @@
+{
+  "uuid": "command-indicators@arstulke.github.io",
+  "name": "Command Indicators",
+  "description": "Shows the output of configurable shell commands in the top bar.",
+  "shell-version": ["48", "49", "50"],
+  "url": "https://github.com/arstulke/dotfiles"
+}

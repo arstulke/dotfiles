@@ -25,7 +25,7 @@ in {
     left = itemList "Order of the items in the left box of the GNOME top bar." [
       "activities" # workspace indicator
       "system-monitor@gnome-shell-extensions.gcampax.github.com"
-      "ccusage-indicator@lordvcs.github.io" # claude usage monitor
+      "command-indicator-claude-usage" # claude usage monitor (see ./command-indicators.nix)
     ];
     center = itemList "Order of the items in the center box of the GNOME top bar." [
       "dateMenu" # clock
