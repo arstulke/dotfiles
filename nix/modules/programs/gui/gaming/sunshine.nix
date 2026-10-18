@@ -27,7 +27,7 @@
   config = cfg: {
     environment.systemPackages = with pkgs; [
       # configuring display resolution via cli
-      inputs.displayconfig-mutter.packages.${pkgs.system}.default
+      inputs.displayconfig-mutter.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     services.sunshine = {

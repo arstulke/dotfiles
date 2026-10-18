@@ -1,6 +1,6 @@
 inputs: final: prev: let
   pkgs-ext = import inputs.nixpkgs {
-    inherit (prev) system;
+    system = prev.stdenv.hostPlatform.system;
     config.allowUnfree = true;
     overlays = [inputs.nix-vscode-extensions.overlays.default];
   };
