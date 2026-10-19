@@ -44,16 +44,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1792111805,
-        "narHash": "sha256-CEdz7CvpzbRNmqWNgDRv+MwJXp5wkv8YDrYbNaOavR8=",
+        "lastModified": 1792430216,
+        "narHash": "sha256-YvsUChuYhfGNXZBLEY4yNEmmMiczxv7iNOTbk30Htzo=",
         "owner": "arstulke",
         "repo": "aw-manual",
-        "rev": "09096639f0030e83ff448d893b6a88b0cbe0453d",
+        "rev": "3646f9436c716e729b9953ee183b20beb581fbe0",
         "type": "github"
       },
       "original": {
         "owner": "arstulke",
-        "ref": "v0.1.0",
+        "ref": "v0.2.0",
         "repo": "aw-manual",
         "type": "github"
       }
