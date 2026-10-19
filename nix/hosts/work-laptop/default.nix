@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   modules = {
     bundles."20-desktop".enable = true;
     bundles."31-work-machine".enable = true;
