@@ -3,9 +3,9 @@
     bundles."20-desktop".enable = true;
     bundles."31-work-machine".enable = true;
 
-    desktop.gnome.dock.favorite-apps = [
-      "chrome-cifhbcnohmdccbgoicgdjpfamggdegmo-Default.desktop" # Microsoft Teams PWA
-      "chrome-pkooggnaalmfkidjmlhoelhdllpphaga-Default.desktop" # Microsoft Outlook PWA
+    desktop.gnome.dock.favorite-apps = lib.mkOverride 50 [
+      "chrome-ompifgpmddkgmclendfeacglnodjjndh-Default.desktop" # Microsoft Teams PWA
+      "chrome-eoficlgicibekocmfdomjbfnjmehnhcd-Default.desktop" # Microsoft Outlook PWA
       "org.keepassxc.KeePassXC.desktop"
       "com.yubico.yubioath.desktop"
       "google-chrome.desktop"
