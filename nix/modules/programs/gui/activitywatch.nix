@@ -19,16 +19,8 @@
   hm.services.activitywatch = {
     enable = true;
     watchers = {
-      # TODO fix this
-      aw-watcher-afk = {
-        package = pkgs.activitywatch;
-        settings = {
-          timeout = 300;
-          poll_time = 2;
-        };
-      };
-
       # no additional watchers due to privacy concerns (regarding data processing for easier time tracking)
+      # - aw-watcher-afk seems not to work on Wayland + Gnome
     };
   };
 
