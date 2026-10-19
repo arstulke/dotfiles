@@ -72,15 +72,31 @@ in {
   };
 
   hm.home.file.".ssh/config".text = ''
+    # Azure DevOps
     Host ssh.dev.azure.com
       User git
       PubkeyAcceptedAlgorithms +ssh-rsa
       HostkeyAlgorithms +ssh-rsa
 
+    # Azure DevOps
     Host vs-ssh.visualstudio.com
       User git
       PubkeyAcceptedAlgorithms +ssh-rsa
       HostkeyAlgorithms +ssh-rsa
+
+    # GitHub (work)
+    Host github-work
+      HostName github.com
+      User git
+      IdentityFile ~/.ssh/id_ed25519
+      IdentitiesOnly yes
+
+    # GitHub (personal)
+    Host github-personal
+      HostName github.com
+      User git
+      IdentityFile ~/.ssh/id_github_personal
+      IdentitiesOnly yes
 
     # Created by AWS Toolkit for VSCode. https://github.com/aws/aws-toolkit-vscode
     Host sm_*
