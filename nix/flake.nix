@@ -58,7 +58,7 @@
 
     # Manual activity tracking for ActivityWatch
     aw-manual = {
-      url = "github:arstulke/aw-manual/v0.2.0";
+      url = "github:arstulke/aw-manual/v0.2.2";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
