@@ -14,7 +14,6 @@
       "com.yubico.yubioath.desktop"
       "google-chrome.desktop"
       "chrome-eejcciocfhhpepllfdanigebammgampf-Profile_5.desktop" # Employee Self Service
-      "com.anthropic.Claude.desktop"
       "code.desktop"
       "idea.desktop"
       "sublime_merge.desktop"
