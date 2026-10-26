@@ -25,7 +25,7 @@ in {
       mcp-shell-server.enable = mkDefault true;
       aws-cli.enable = mkDefault true;
       aws-cli.prepVsCode = mkDefault true;
-      nodejs_22.enable = mkDefault true;
+      nodejs.enable = mkDefault true;
       openvpn.enable = mkDefault true;
 
       dotai.enable = mkDefault true;
