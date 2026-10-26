@@ -36,7 +36,6 @@ in {
       google-chrome.disableFeatures = ["PdfOopif"];
       logseq.enable = true;
       openaws-vpn-client.enable = true;
-      activitywatch.enable = true;
 
       vscode.extensions = with pkgs.my-vscode-extension-sets; [
         # python

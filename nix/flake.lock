@@ -36,44 +36,7 @@
         "type": "github"
       }
     },
-    "aw-manual": {
-      "inputs": {
-        "crane": "crane",
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1792480524,
-        "narHash": "sha256-jMxoGzP1Gn6AzBoVaOg9r6OS3Yg/mPe4ghNklVhGg9k=",
-        "owner": "arstulke",
-        "repo": "aw-manual",
-        "rev": "5a142d7c27135f862be3575e14a57162aa3c22f6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "arstulke",
-        "ref": "v0.2.2",
-        "repo": "aw-manual",
-        "type": "github"
-      }
-    },
     "crane": {
-      "locked": {
-        "lastModified": 1791754810,
-        "narHash": "sha256-cN0Mgk+sQtCJcGWs9H4M0CnLRAuC4I8aCwiBTcBJs6E=",
-        "owner": "ipetkov",
-        "repo": "crane",
-        "rev": "bd63bf1d0a0f6dcacd7549c714a671ee63b0db6a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ipetkov",
-        "repo": "crane",
-        "type": "github"
-      }
-    },
-    "crane_2": {
       "locked": {
         "lastModified": 1745454774,
         "narHash": "sha256-oLvmxOnsEKGtwczxp/CwhrfmQUG2ym24OMWowcoRhH8=",
@@ -90,7 +53,7 @@
     },
     "displayconfig-mutter": {
       "inputs": {
-        "crane": "crane_2",
+        "crane": "crane",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       },
@@ -571,7 +534,6 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
-        "aw-manual": "aw-manual",
         "displayconfig-mutter": "displayconfig-mutter",
         "flake-utils": "flake-utils_2",
         "haumea": "haumea",
