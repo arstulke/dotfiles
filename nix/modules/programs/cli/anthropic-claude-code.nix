@@ -69,9 +69,6 @@ in {
 
     # usage monitor
     claudeUsage # in CLI (in gnome statusbar via command-indicators below)
-
-    # addons
-    unstable.rtk
   ];
 
   # usage monitor in gnome statusbar
@@ -79,9 +76,4 @@ in {
     command = "${claudeUsage}/bin/claude-usage";
     interval = 60;
   };
-
-  # initializing rtk
-  system.userActivationScripts.initRtkForClaudeCode = ''
-    ${pkgs.unstable.rtk}/bin/rtk init -g
-  '';
 }
