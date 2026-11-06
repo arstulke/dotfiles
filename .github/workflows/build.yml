@@ -16,6 +16,11 @@ jobs:
         with:
           cachix_auth_token: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
+      - name: "Build work-laptop"
+        uses: ./.github/actions/build-nix-host
+        with:
+          host: work-laptop
+
       - name: "Build personal-laptop"
         uses: ./.github/actions/build-nix-host
         with:
@@ -30,11 +35,6 @@ jobs:
         uses: ./.github/actions/build-nix-host
         with:
           host: vps-01
-
-      - name: "Build work-laptop"
-        uses: ./.github/actions/build-nix-host
-        with:
-          host: work-laptop
 
   build-aarch64:
     name: Build aarch64 hosts
